@@ -1,0 +1,631 @@
+html {
+  box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+html,
+body {
+  /* height: 100%; */
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Jura', sans-serif;
+  background-color: #087E8B;
+  background-image: linear-gradient(-45deg, #FFC914, #087E8B);
+  color: white;
+}
+
+a {
+  text-decoration: none;
+}
+
+a:link,
+a:visited {
+  border-bottom: 2px dotted #fb88dd;
+  padding: 0;
+  color: white;
+}
+
+a:hover,
+a:active {
+  color: #fb88dd;
+}
+
+a:focus {
+  outline: none;
+}
+
+.titulo {
+  width: 250px;
+  padding-bottom: 120px;
+  margin: 3em auto 0 auto;
+  position: relative;
+  line-height: 3em;
+}
+
+.titulo .cabezas {
+  position: absolute;
+  width: 100%;
+  top: 1.5em;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1;
+}
+
+.titulo .cabezas img {
+  display: inline-block;
+  position: relative;
+  height: 60px;
+  width: auto;
+}
+
+.titulo .grupo1 {
+  position: absolute;
+  transform: translateX(-40%);
+}
+
+.titulo .grupo2 {
+  position: absolute;
+  right: 0;
+  transform: translateX(40%);
+}
+
+.cabeza-carlos,
+.cabeza-hollman {
+  z-index: 1;
+}
+
+.cabeza-claudia,
+.cabeza-miguel {
+  z-index: 2;
+}
+
+.cabeza-carlos {
+  transform: translateX(-22px);
+}
+
+.cabeza-hollman {
+  transform: translateX(22px);
+}
+
+.titulo h1 {
+  width: 100%;
+  padding: 0;
+  font-size: 3em;
+  text-align: center;
+  position: absolute;
+  top: 12px;
+  left: 50%;
+  letter-spacing: 6px;
+  transform: translateX(-50%);
+  margin: 0;
+  z-index: 3;
+}
+
+.titulo .gris {
+  display: block;
+  width: 100%;
+  height: 24px;
+  background-color: #3d3d3d;
+  left: 50%;
+  transform: translateX(-50%);
+  margin-top: 5em;
+  position: absolute;
+  z-index: 2;
+}
+
+.titulo .lineas {
+  display: block;
+  width: 100%;
+  height: 24px;
+  left: 50%;
+  transform: translateX(-51.5%);
+  margin-top: 5.4em;
+  position: absolute;
+  z-index: 1;
+  background-color: #3a3a3a;
+  background-image: url("data:image/svg+xml,%3Csvg width='5' height='5' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23ffffff' fill-opacity='1' fill-rule='evenodd'%3E%3Cpath d='M0 40L40 0H20L0 20M40 40V20L20 40'/%3E%3C/g%3E%3C/svg%3E");
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: 'Quantico', sans-serif;
+}
+
+#preguntas {
+  display: none;
+}
+
+#preguntas.active {
+  display: block;
+}
+
+#res {
+  display: none;
+  margin: 2em 0;
+  padding: 0;
+  vertical-align: top;
+  width: 100%;
+  text-align: center;
+}
+
+#res.active {
+  height: 100vh;
+  display: inline-block;
+}
+
+#compartir {
+  font-size: 1.3em;
+  margin: 1em 0;
+}
+
+#download-img {
+  font-size: 1.3em;
+  margin: 1em 0;
+  cursor: pointer;
+}
+
+#download-img:hover {
+  opacity: .8;
+}
+
+canvas {
+  border: 3px solid;
+  width: 80%;
+}
+
+section {
+  width: 80%;
+  margin: 1em 0 1em 15%;
+  padding: .5em 0;
+}
+
+.section-title {
+  cursor: pointer;
+  position: relative;
+}
+
+.section-title h2 {
+  position: relative;
+  display: inline-block;
+}
+
+.section-title h2::after {
+  content: '';
+  width: 15px;
+  height: 15px;
+  display: block;
+  background-image: url('../imgs/ico-info.svg');
+  position: absolute;
+  right: -21px;
+  top: 5px;
+}
+
+.info-link {
+  position: relative;
+  display: inline-block;
+  margin-right: 16px;
+  cursor: pointer;
+}
+
+.info-link::after {
+  content: '';
+  width: 12px;
+  height: 12px;
+  display: block;
+  background-image: url('../imgs/ico-info.svg');
+  position: absolute;
+  right: -15px;
+  top: 5px;
+}
+
+.pregunta .descripcion {
+  font-size: .75em;
+  font-weight: 100;
+  /* line-height: 1em; */
+  height: 0;
+  overflow: hidden;
+  -webkit-transition: all .28s ease-in-out;
+  -moz-transition: all .28s ease-in-out;
+  -ms-transition: all .28s ease-in-out;
+  -o-transition: all .28s ease-in-out;
+  transition: all .28s ease-in-out;
+}
+
+.section-title .descripcion-categoria {
+  height: 0;
+  font-weight: bold;
+  font-size: .9em;
+  overflow: hidden;
+  -webkit-transition: all .28s ease-in-out;
+  -moz-transition: all .28s ease-in-out;
+  -ms-transition: all .28s ease-in-out;
+  -o-transition: all .28s ease-in-out;
+  transition: all .28s ease-in-out;
+  position: relative;
+  z-index: 1;
+}
+
+.cita {
+  font-size: .9em;
+  font-weight: normal;
+}
+
+section h2 {
+  text-align: center;
+  margin: 0;
+}
+
+input {
+  display: none;
+}
+
+label {
+  cursor: pointer;
+  display: block;
+  font-size: 1.3em;
+  padding: .5em;
+  text-align: center;
+  margin: .5em;
+}
+
+input:disabled+label {
+  opacity: .5;
+}
+
+input:checked+label {
+  background-color: rgb(70, 71, 70);
+}
+
+.sortable li {
+  padding: .5em;
+  cursor: move;
+}
+
+.pregunta {
+  border: 3px solid white;
+  padding: 1em;
+  position: relative;
+  margin: 3em auto;
+}
+
+.pregunta.respondida {
+  border: 3px dotted white;
+}
+
+.pregunta::before {
+  position: absolute;
+  top: -2.5em;
+  right: -3px;
+  background-color: #3d3d3d;
+  padding: .5em;
+  font-size: .85em;
+  z-index: 2;
+}
+
+.pregunta::after {
+  content: '';
+  position: absolute;
+  top: -2.5em;
+  right: -8px;
+  background-color: #3a3a3a;
+  background-image: url("data:image/svg+xml,%3Csvg width='5' height='5' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23ffffff' fill-opacity='1' fill-rule='evenodd'%3E%3Cpath d='M0 40L40 0H20L0 20M40 40V20L20 40'/%3E%3C/g%3E%3C/svg%3E");
+  z-index: 1;
+  height: 30px;
+}
+
+.pregunta[data-categoria="sexo"]::before {
+  content: 'sexo y género';
+}
+
+.pregunta[data-categoria="sexo"]::after {
+  width: 103px;
+}
+
+.pregunta[data-categoria="ciudad"]::before {
+  content: 'derecho a la ciudad';
+}
+
+.pregunta[data-categoria="ciudad"]::after {
+  width: 139px;
+}
+
+.pregunta[data-categoria="drogas"]::before {
+  content: 'cárceles y drogas';
+}
+
+.pregunta[data-categoria="drogas"]::after {
+  width: 128px;
+}
+
+.pregunta[data-categoria="violencia"]::before {
+  content: 'violencias policiales';
+}
+
+.pregunta[data-categoria="violencia"]::after {
+  width: 142px;
+}
+
+.pregunta[data-categoria="actualidad"]::before {
+  content: 'actualidad';
+}
+
+.pregunta[data-categoria="actualidad"]::after {
+  width: 81px;
+}
+
+.pregunta[data-categoria="personal"]::before {
+  content: 'sobre usted';
+}
+
+.pregunta[data-categoria="personal"]::after {
+  width: 89px;
+}
+
+.menu {
+  font-family: 'Quantico', sans-serif;
+  position: fixed;
+  left: 10px;
+  top: 20vh;
+}
+
+.menu .categoria {
+  display: block;
+  font-size: .75em;
+  letter-spacing: 0.5px;
+  cursor: pointer;
+  border: 2px solid transparent;
+  padding: 0.3em;
+}
+
+.menu .categoria.active {
+  border: 2px solid white;
+}
+
+.menu .categoria::after {
+  content: '';
+  -webkit-transition: all .5s ease-in-out;
+  -moz-transition: all .5s ease-in-out;
+  -ms-transition: all .5s ease-in-out;
+  -o-transition: all .5s ease-in-out;
+  transition: all .5s ease-in-out;
+  opacity: 0;
+  display: block;
+  position: fixed;
+  width: 300px;
+  z-index: 0;
+  left: 50%;
+  transform: translate(-50%);
+  top: 25%;
+  opacity: 0;
+}
+
+.menu .categoria.active::after {
+  opacity: .2;
+}
+
+.menu .categoria.active.cat-sexo::after {
+  height: 257px;
+  background-image: url('../imgs/ico-sexo.svg');
+}
+
+.menu .categoria.active.cat-ciudad::after {
+  height: 236px;
+  background-image: url('../imgs/ico-ciudad.svg');
+}
+
+.menu .categoria.active.cat-drogas::after {
+  height: 269px;
+  background-image: url('../imgs/ico-drogas.svg');
+}
+
+.menu .categoria.active.cat-policia::after {
+  height: 281px;
+  background-image: url('../imgs/ico-policial.svg');
+}
+
+.menu .categoria.active.cat-actualidad::after {
+  height: 270px;
+  background-image: url('../imgs/ico-actualidad.svg');
+}
+
+.menu .categoria.active.cat-sobre::after {
+  height: 236px;
+  background-image: url('../imgs/ico-candidato.svg');
+}
+
+.menu .categoria .icon {
+  display: block;
+  height: 30px;
+  width: 32px;
+  margin-right: .3em;
+  background-repeat: no-repeat;
+}
+
+.menu .categoria.cat-sexo .icon {
+  background-image: url('../imgs/ico-sexo.svg');
+}
+
+.menu .categoria.cat-ciudad .icon {
+  background-image: url('../imgs/ico-ciudad.svg');
+}
+
+.menu .categoria.cat-drogas .icon {
+  background-image: url('../imgs/ico-drogas.svg');
+}
+
+.menu .categoria.cat-policia .icon {
+  background-image: url('../imgs/ico-policial.svg');
+}
+
+.menu .categoria.cat-actualidad .icon {
+  background-image: url('../imgs/ico-actualidad.svg');
+}
+
+.menu .categoria.cat-sobre .icon {
+  background-image: url('../imgs/ico-candidato.svg');
+}
+
+.menu .categoria .icon,
+.menu .categoria .name {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.menu .categoria .name {
+  display: none;
+}
+
+#info.active .content,
+#info.active .lines {
+  width: 80%;
+}
+
+#info.active .content {
+  padding: 1em 3em 3em 3em;
+}
+
+#info .content {
+  overflow: hidden;
+  display: block;
+  background-color: #3d3d3d;
+  color: white;
+  position: fixed;
+  padding: 0;
+  width: 0;
+  height: 70vh;
+  top: 10%;
+  left: 10%;
+  z-index: 99;
+  -webkit-transition: all .25s ease-in-out;
+  -moz-transition: all .25s ease-in-out;
+  -ms-transition: all .25s ease-in-out;
+  -o-transition: all .25s ease-in-out;
+  transition: all .25s ease-in-out;
+  overflow-y: auto;
+}
+
+#info .lines {
+  display: block;
+  background-color: #3a3a3a;
+  background-image: url("data:image/svg+xml,%3Csvg width='5' height='5' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23ffffff' fill-opacity='1' fill-rule='evenodd'%3E%3Cpath d='M0 40L40 0H20L0 20M40 40V20L20 40'/%3E%3C/g%3E%3C/svg%3E");
+  position: fixed;
+  width: 0;
+  height: 70vh;
+  top: 11%;
+  left: 9%;
+  z-index: 98;
+  -webkit-transition: all .28s ease-in-out;
+  -moz-transition: all .28s ease-in-out;
+  -ms-transition: all .28s ease-in-out;
+  -o-transition: all .28s ease-in-out;
+  transition: all .28s ease-in-out;
+}
+
+header {
+  font-family: 'Quantico', sans-serif;
+  color: #2c2c2c;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  display: block;
+  margin: 0;
+  padding: 1em;
+  z-index: 9999;
+}
+
+#creditos-link {
+  cursor: pointer;
+  background-image: url("../imgs/ico-info.svg");
+  width: 30px;
+  height: 30px;
+  display: block;
+  opacity: 1;
+}
+
+#creditos-link:hover {
+  opacity: .8;
+}
+
+#close {
+  cursor: pointer;
+  font-size: 2em;
+  text-align: right;
+}
+
+#close:hover {
+  color: #979797;
+}
+
+#logos {
+  text-align: center;
+}
+
+#logos a {
+  border: none;
+  opacity: 1;
+}
+
+#logos a:hover {
+  opacity: .8;
+}
+
+#logos img {
+  display: inline-block;
+  margin: .5em;
+  height: 45px;
+  width: auto;
+  vertical-align: middle;
+}
+
+
+@media only screen and (min-width: 600px) {
+  .titulo {
+    width: 450px;
+  }
+
+  .titulo .cabezas {
+    top: 0;
+  }
+
+  .titulo .cabezas img {
+    height: 90px;
+  }
+
+  section h2 {
+    text-align: left;
+  }
+}
+
+@media only screen and (min-width: 1024px) {
+  .menu .categoria .name {
+    display: inline-block;
+  }
+
+  section {
+    width: 60%;
+    padding: 1em 0;
+    margin: 0 auto;
+  }
+
+  canvas {
+    width: 60%;
+  }
+
+  .pregunta {
+    padding: 2em;
+  }
+}
+
+.hashtag {
+  color: rgba(239, 233, 131, 1);
+}

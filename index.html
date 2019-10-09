@@ -1,0 +1,1026 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Buen Partido</title>
+  <meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="apple-touch-icon" sizes="57x57" href="./imgs/apple-icon-57x57.png">
+  <link rel="apple-touch-icon" sizes="60x60" href="./imgs//apple-icon-60x60.png">
+  <link rel="apple-touch-icon" sizes="72x72" href="./imgs//apple-icon-72x72.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="./imgs//apple-icon-76x76.png">
+  <link rel="apple-touch-icon" sizes="114x114" href="./imgs//apple-icon-114x114.png">
+  <link rel="apple-touch-icon" sizes="120x120" href="./imgs//apple-icon-120x120.png">
+  <link rel="apple-touch-icon" sizes="144x144" href="./imgs//apple-icon-144x144.png">
+  <link rel="apple-touch-icon" sizes="152x152" href="./imgs//apple-icon-152x152.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="./imgs//apple-icon-180x180.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="./imgs//android-icon-192x192.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="./imgs//favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="96x96" href="./imgs//favicon-96x96.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="./imgs//favicon-16x16.png">
+  <link rel="manifest" href="./imgs//manifest.json">
+  <meta name="msapplication-TileColor" content="#087E8B">
+  <meta name="msapplication-TileImage" content="./imgs//ms-icon-144x144.png">
+  <meta name="theme-color" content="#087E8B">
+  <link href="https://fonts.googleapis.com/css?family=Jura|Quantico&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="./css/style.css" />
+</head>
+
+<body>
+  <header>
+    <span id="creditos-link"></span>
+  </header>
+
+  <div id="preguntas" class="active">
+    <div class="titulo">
+      <div class="cabezas">
+        <span class="grupo1">
+          <img class="cabeza-claudia" src="./imgs/claudia_lopez_pixel.png" alt="Claudia López" />
+          <img class="cabeza-carlos" src="./imgs/carlos galan_pixel.png" alt="Carlos Galan" />
+        </span>
+
+        <span class="grupo2">
+          <img class="cabeza-hollman" src="./imgs/hollman morris_pixel.png" alt="Hollman Morris" />
+          <img class="cabeza-miguel" src="./imgs/miguel uribe_pixel.png" alt="Miguel Uribe" />
+        </span>
+      </div>
+      <h1>buen partido</h1>
+      <span class="gris"></span>
+      <span class="lineas"></span>
+    </div>
+
+    <div class="menu">
+      <div class="categoria cat-sexo" data-to="sexo">
+        <span class="icon"></span>
+        <span class="name">sexo y género</span>
+      </div>
+
+      <div class="categoria cat-ciudad" data-to="ciudad">
+        <span class="icon"></span>
+        <span class="name">derecho a la ciudad</span>
+      </div>
+
+      <div class="categoria cat-drogas" data-to="drogas">
+        <span class="icon"></span>
+        <span class="name">cárceles y drogas</span>
+      </div>
+
+      <div class="categoria cat-policia" data-to="policial">
+        <span class="icon"></span>
+        <span class="name">violencias policiales</span>
+      </div>
+
+      <div class="categoria cat-actualidad" data-to="actualidad">
+        <span class="icon"></span>
+        <span class="name">actualidad</span>
+      </div>
+
+      <div class="categoria cat-sobre" data-to="sobre">
+        <span class="icon"></span>
+        <span class="name">sobre usted</span>
+      </div>
+    </div>
+
+    <section id="sexo">
+      <div class="section-title">
+        <h2>Sexo y Género</h2>
+        <div class="descripcion-categoria">
+          <p>
+            El Área de Sexo y Género de Temblores ONG* busca defender los
+            derechos humanos de las mujeres y personas con orientaciones
+            sexuales e identidades de género diversas, teniendo en cuenta
+            dimensiones sociales, culturales, políticas y corporales. Este
+            propósito se cumple a través de talleres sobre sexualidad y género,
+            acompañamiento legal, presencia comunicativa en redes sociales e
+            investigación. Actualmente, se está llevando a cabo el proyecto
+            "Sexo en la Ciudad" en el que se investiga participativamente y se
+            proponen acciones concretas para la violencia y violación a los
+            derechos humanos de las personas LGTB+ y trabajadoras sexuales en el
+            espacio público de Bogotá.
+          </p>
+
+          <p class="cita">
+            * Fundado en el 2017, Temblores ONG es un movimiento social que
+            busca, mediante acciones locales, generar grandes impactos en la
+            lucha y defensa de los derechos humanos en Colombia. Para mayor
+            información, remítase a:
+            <a href="https://www.temblores.org/?fbclid=IwAR3y2cYkk_VbpQSP4TaPFQK-SAjPaRp9KL1FJonpi64CSM8ZHmxfeM_2QqA"
+              target="_blank">temblores.org</a>
+          </p>
+        </div>
+      </div>
+
+      <!-- ........ 1. CATEGORIA SEXO ........ -->
+      <form id="pregunta1" class="pregunta" data-categoria="sexo" data-tipo="1">
+        <h3>
+          ¿Está de acuerdo con que se deben contratar personas
+          <span class="info-link">trans</span> en el equipo de gobierno para
+          combatir la desigualdad que sufre esta población?
+          <div class="descripcion">
+            <p>
+              Trans incluye a las personas transgénero, transexuales, travestis
+              y, en general, a quienes cuestionan el binario entre hombre/mujer
+              como única opción de identificación individual y social. Para
+              mayor información acerca de la comunidad trans, remítase a:
+              <a href="https://sentiido.com/travesti-transexual-transgenero-algunas-definiciones-utiles/"
+                target="_blank">sentiido.com/travesti-transexual-transgenero-algunas-definiciones-utiles</a>
+            </p>
+          </div>
+        </h3>
+
+        <input id="p1o1" name="p1" type="checkbox" value="si" />
+        <label for="p1o1">Sí</label>
+        <input id="p1o2" name="p1" type="checkbox" value="no" />
+        <label for="p1o2">No</label>
+      </form>
+
+      <form id="pregunta2" class="pregunta" data-categoria="sexo" data-tipo="1">
+        <h3>
+          ¿Está de acuerdo con crear una política pública para combatir el
+          <span class="info-link">acoso callejero</span> hacia mujeres y
+          personas LGBT+ en la ciudad?
+          <div class="descripcion">
+            <p>
+              Para mayor información acerca del acoso sexual en Bogotá, remítase
+              a:
+              <a href="https://conexioncapital.co/acoso-sexual-bogota/"
+                target="_blank">conexioncapital.co/acoso-sexual-bogota</a>
+            </p>
+          </div>
+        </h3>
+
+        <input id="p2o1" name="p2" type="checkbox" value="si" />
+        <label for="p2o1">Sí</label>
+        <input id="p2o2" name="p2" type="checkbox" value="no" />
+        <label for="p2o2">No</label>
+      </form>
+
+      <form id="pregunta3" class="pregunta" data-categoria="sexo" data-tipo="1">
+        <h3>
+          ¿Está de acuerdo con que debe haber cátedras de
+          <span class="info-link">educación sexual y reproductiva</span> en
+          colegios públicos?
+          <div class="descripcion">
+            <p>
+              Para mayor información acerca de educación sexual en Colombia,
+              remítase a:
+              <a href="https://www.mineducacion.gov.co/1621/article-87151.html"
+                target="_blank">mineducacion.gov.co/1621/article-87151.html</a>
+            </p>
+          </div>
+        </h3>
+
+        <input id="p3o1" name="p3" type="checkbox" value="si" />
+        <label for="p3o1">Sí</label>
+        <input id="p3o2" name="p3" type="checkbox" value="no" />
+        <label for="p3o2">No</label>
+      </form>
+
+      <form id="pregunta4" class="pregunta" data-categoria="sexo" data-tipo="1">
+        <h3>
+          ¿Está de acuerdo con que el/la alcalde/sa le pida la renuncia a un
+          funcionario que fue acusado de algún
+          <span class="info-link">delito de orden sexual?</span>
+          <div class="descripcion">
+            <p>
+              Para mayor información acerca del acoso laboral en Colombia,
+              remítase a:
+              <a href="https://www.eltiempo.com/justicia/cortes/aumentan-denuncias-por-acoso-laboral-en-colombia-400258"
+                target="_blank">eltiempo.com/justicia/cortes/aumentan-denuncias-por-acoso-laboral-en-colombia-400258</a>
+            </p>
+          </div>
+        </h3>
+
+        <input id="p4o1" name="p4" type="checkbox" value="si" />
+        <label for="p4o1">Sí</label>
+        <input id="p4o2" name="p4" type="checkbox" value="no" />
+        <label for="p4o2">No</label>
+        <input id="p4o3" name="p4" type="checkbox" value="siif" />
+        <label for="p4o3">Sí, solo si hay pruebas</label>
+      </form>
+
+      <form id="pregunta5" class="pregunta" data-categoria="sexo" data-tipo="1">
+        <h3>
+          Para usted, <span class="info-link">"ideología de género"</span> es
+          sinónimo de:
+          <div class="descripcion">
+            <p>
+              Infórmese aquí acerca de la ideología de género:
+              <a href="https://lasillavacia.com/silla-llena/red-de-las-mujeres/historia/el-fantasma-de-la-ideologia-de-genero-69742"
+                target="_blank">lasillavacia.com/silla-llena/red-de-las-mujeres/historia/el-fantasma-de-la-ideologia-de-genero-69742</a>
+            </p>
+          </div>
+        </h3>
+
+        <input id="p5o1" name="p5" type="checkbox" value="a" />
+        <label for="p5o1">Patriarcado</label>
+        <input id="p5o2" name="p5" type="checkbox" value="b" />
+        <label for="p5o2">Homosexualidad</label>
+        <input id="p5o3" name="p5" type="checkbox" value="c" />
+        <label for="p5o3">Feminismo</label>
+      </form>
+
+      <form id="pregunta6" class="pregunta" data-categoria="sexo" data-tipo="1">
+        <h3>
+          ¿Está de acuerdo con promover una política de Servicios de Salud
+          Amigables para Adolescentes y Jóvenes
+          <span class="info-link">(SSAAJ)</span> para personas que quieran
+          interrumpir voluntariamente su embarazo?
+          <div class="descripcion">
+            <p>
+              El modelo de Servicios de Salud Amigables para Adolescentes y
+              Jóvenes (SSAAJ) es un proyecto del Ministerio de Salud y
+              Protección Social con el fin de que se garantice la defensa de los
+              Derechos Sexuales y Reproductivos de la población colombiana entre
+              los 10 y los 29 años.
+            </p>
+            <p>
+              Para mayor información sobre el SSAAJ, remítase a:
+              <a href="https://minsalud.gov.co/salud/publica/ssr/Paginas/Servicios-de-salud-amigables-para-adolescentes-y-jovenes-SSAAJ.aspx"
+                target="_blank">minsalud.gov.co/salud/publica/ssr/Paginas/Servicios-de-salud-amigables-para-adolescentes-y-jovenes-SSAAJ.aspx</a>
+            </p>
+          </div>
+        </h3>
+        <input id="p6o1" name="p3" type="checkbox" value="si" />
+        <label for="p6o1">Sí</label>
+        <input id="p6o2" name="p3" type="checkbox" value="no" />
+        <label for="p6o2">No</label>
+        <input id="p6o3" name="p3" type="checkbox" value="siif" />
+        <label for="p6o3">Depende</label>
+      </form>
+
+      <!-- ....:::: FIN 1. CATEGORIA SEXO ::::.... -->
+    </section>
+
+    <!-- ........ 2. CATEGORIA CIUDAD ........ -->
+    <section id="ciudad">
+      <div class="section-title">
+        <h2>Derecho a la ciudad</h2>
+        <div class="descripcion-categoria">
+          <p>
+            El 54% de la población mundial vive en las ciudades y la población
+            colombiana no es la excepción. Es más, las dinámicas de conflicto
+            armado que han azotado la historia del país incrementaron el
+            fenómeno de migración rural-urbana. En la actualidad, el 77,8% de la
+            población colombiana habita en las cabeceras municipales del país.
+            Bogotá, ha sido una de las grandes ciudades receptoras de
+            ciudadanías que, ante la inminente violencia que vivían en otras
+            regiones del país, han llegado a habitar las periferias de la ciudad
+            en condiciones de exclusión, negación de derechos y discriminación
+            extremas. Tal es el caso de las personas habitantes de calle,
+            vendedoras ambulantes, que ejercen el trabajo sexual y venezolanas,
+            entre otras, que están migrando hacia Bogotá.
+          </p>
+
+          <p>
+            Temblores ONG, ha identificado que a estas poblaciones se les niega
+            sistemáticamente su derecho a ocupar un lugar en el territorio, a
+            construir su identidad en el espacio público, a trabajar y a
+            movilizarse en la ciudad. Lo anterior, sin lugar a duda, no solo
+            figura como una práctica estatal de neglicencia sistemática hacia
+            sus derechos fundamentales, sino que también representa la desidia
+            hacia su derecho a la ciudad. En efecto, las prácticas de expulsión
+            de las personas habitantes de calle del espacio público, la ausencia
+            de baños públicos gratuitos para las personas que conectan con la
+            calle a través del trabajo o la habitancia y la ausencia de una
+            infraestructura que garantice el acceso de la población de calle al
+            agua potable, terminan por convertir a Bogotá en un lugar que le
+            niega el derecho a la ciudad, el derecho a habitarla dignamente, a
+            ocuparla propiamente y a transitarla como es debido, a una gran
+            porción de la población.
+          </p>
+          <p class="cita">
+            Para mayor información acerca del Derecho a la Ciudad en Colombia,
+            remítase a:
+            <a href="https://la.network/consiste-derecho-la-ciudad/"
+              target="_blank">la.network/consiste-derecho-la-ciudad</a>
+          </p>
+        </div>
+      </div>
+
+      <form id="pregunta7" class="pregunta" data-categoria="ciudad" data-tipo="2">
+        <h3>
+          En su opinión, en Bogotá no hay
+          <span class="info-link">baños públicos</span> por:
+          <div class="descripcion">
+            <p>
+              Para mayor información sobre el plan piloto de baños públicos de
+              la alcaldía actual de Bogotá, remítase a:
+              <a href="https://bogota.gov.co/mi-ciudad/planeacion/plan-piloto-para-banos-publicos-en-bogota"
+                target="_blank">bogota.gov.co/mi-ciudad/planeacion/plan-piloto-para-banos-publicos-en-bogota</a>
+            </p>
+          </div>
+        </h3>
+
+        <input id="p7o1" type="checkbox" name="p7" value="a" />
+        <label for="p7o1">La violencia policial</label>
+        <input id="p7o2" type="checkbox" name="p7" value="b" />
+        <label for="p7o2">Los problemas de salud pública</label>
+        <input id="p7o3" type="checkbox" name="p7" value="c" />
+        <label for="p7o3">El deterioro al patrimonio urbano</label>
+        <input id="p7o4" type="checkbox" name="p7" value="d" />
+        <label for="p7o4">La inseguridad</label>
+      </form>
+
+      <form id="pregunta8" class="pregunta" data-categoria="ciudad" data-tipo="2">
+        <h3>
+          En su opinión, los habitantes de calle son
+          <span class="info-link">maltratados físicamente</span>
+          por:
+          <div class="descripcion">
+            <p>
+              Para mayor información acerca del maltrato y homicidio de las
+              personas habitantes de calle, remítase a:
+              <a href="https://pacifista.tv/notas/informe-especial-el-exterminio-de-los-habitantes-de-calle-en-bogota/"
+                target="_blank">pacifista.tv/notas/informe-especial-el-exterminio-de-los-habitantes-de-calle-en-bogota</a>
+            </p>
+          </div>
+        </h3>
+        <input id="p8o1" type="checkbox" name="p8" value="a" />
+        <label for="p8o1">Riñas y enfrentamientos callejeros</label>
+        <input id="p8o2" type="checkbox" name="p8" value="b" />
+        <label for="p8o2">Prácticas de exterminio social</label>
+        <input id="p8o3" type="checkbox" name="p8" value="c" />
+        <label for="p8o3">Agentes de la fuerza pública</label>
+        <input id="p8o4" type="checkbox" name="p8" value="d" />
+        <label for="p8o4">Civiles, en general</label>
+      </form>
+
+      <form id="pregunta9" class="pregunta" data-categoria="ciudad" data-tipo="1">
+        <h3>
+          En su opinión, la
+          <span class="info-link">intervención del Bronx</span> que impulsó
+          Enrique Peñalosa:
+
+          <div class="descripcion">
+            <p>
+              Para mayor información acerca de la intervención en el Bronx y el
+              balance de la situación tres años después, remítase a:
+              <a href="https://www.razonpublica.com/index.php/regiones-temas-31/11985-tres-anos-del-bronx-las-ensenanzas-de-la-intervencion.html"
+                target="_blank">razonpublica.com/index.php/regiones-temas-31/11985-tres-anos-del-bronx-las-ensenanzas-de-la-intervencion.html</a>
+            </p>
+          </div>
+        </h3>
+        <input id="p9o1" type="checkbox" name="p9" value="a" />
+        <label for="p9o1">Aumentó el precio del bazuco, generando un incremento de las riñas
+          entre personas que usan drogas y habitan en la calle</label>
+        <input id="p9o2" type="checkbox" name="p9" value="b" />
+        <label for="p9o2">Generó una crisis humanitaria que hoy en día está vigente en el caño
+          de la calle sexta con carrera treinta</label>
+        <input id="p9o3" type="checkbox" name="p9" value="c" />
+        <label for="p9o3">Acabó definitivamente con la olla más grande de Bogotá</label>
+        <input id="p9o4" type="checkbox" name="p9" value="d" />
+        <label for="p9o4">Mejoró la seguridad y la imagen del sector del Voto Nacional</label>
+        <input id="p9o5" type="checkbox" name="p9" value="e" />
+        <label for="p9o5">Es un modelo replicable para intervenir todas las ollas de la
+          ciudad</label>
+        <input id="p9o6" type="checkbox" name="p9" value="f" />
+        <label for="p9o6">Ha debido realizarse pero no como se llevó a cabo en la
+          administración de Enrique Peñalosa</label>
+      </form>
+
+      <form id="pregunta10" class="pregunta" data-categoria="ciudad" data-tipo="1">
+        <h3>
+          Está de acuerdo con que la Policía reubique vendedores ambulantes y
+          habitantes de <span class="info-link">calle </span>
+          para solucionar la crisis del espacio público:
+          <div class="descripcion">
+            <p>
+              Para mayor información acerca del proceso de reubicación de
+              vendedores ambulantes, remítase a:
+              <a href="https://www.las2orillas.co/problema-no-las-ventas-ambulantes-sino-la-desproteccion-del-estado/"
+                target="_blank">las2orillas.co/problema-no-las-ventas-ambulantes-sino-la-desproteccion-del-estado</a>
+            </p>
+          </div>
+        </h3>
+        <input id="p10o1" name="p10" type="checkbox" value="si" />
+        <label for="p10o1">Sí</label>
+        <input id="p10o2" name="p10" type="checkbox" value="no" />
+        <label for="p10o2">No</label>
+      </form>
+
+      <!-- ....:::: FIN 2. CATEGORIA CIUDAD ::::.... -->
+    </section>
+
+    <section id="drogas">
+      <!-- ........ 3. CATEGORIA DROGAS ........ -->
+      <div class="section-title">
+        <h2>Cárceles y drogas</h2>
+        <div class="descripcion-categoria">
+          <p>
+            Desde Temblores ONG, se ha observado que existe un particular
+            perfilamiento hacia las personas que consumen drogas. A estas, se
+            les cataloga como delincuentes o enfermos y, por ende, la forma de
+            relacionarse con los usuarios de sustancias se da en términos
+            penales o patológicos. El aumento de población penitenciaria por
+            delitos relacionados con el artículo 376 del Código Penal -es decir,
+            porte, tráfico, uso y fabricación- es innegable. Sin embargo, de
+            acuerdo a lo observado mediante las investigaciones participativas
+            que ha realizado Temblores ONG, esta criminalización se centra en
+            poblaciones tradicionalmente marginadas como microtraficantes de
+            escasos recursos económicos, que son, a su vez, consumidores de
+            zonas periféricas de la ciudad. Lo anterior, resulta reproduciendo
+            círculos de pobreza y exclusión, pues al salir de prisión sus
+            oportunidades se reducen aún más. Así, se busca incidir (en escalas
+            locales) en la construcción de una política pública de drogas que
+            proteja a los usuarios y a los eslabones más débiles de la cadena de
+            producción y distribución de drogas.
+          </p>
+          <p class="cita">
+            Para mayor información acerca del consumo de drogas en Colombia,
+            según el Gobierno, remítase a:
+            <a href="http://www.odc.gov.co/problematica-drogas/consumo-drogas/situacion-consumo"
+              target="_blank">odc.gov.co/problematica-drogas/consumo-drogas/situacion-consumo</a>
+          </p>
+        </div>
+      </div>
+
+      <form id="pregunta11" class="pregunta" data-categoria="drogas" data-tipo="orden">
+        <h3>
+          ¿Qué orden de importancia de 1 a 5 (donde 1 es el más importante y 5,
+          el menos importante) le daría a estas soluciones de los problemas de
+          seguridad en <span class="info-link">Bogotá</span>?
+          <div class="descripcion">
+            <p>
+              Para mayor información acerca de la percepción de la seguridad en
+              Bogotá según la ciudadanía y las autoridades, remítase a:
+              <a href="https://www.eltiempo.com/bogota/como-esta-la-seguridad-en-bogota-segun-los-ciudadanos-y-la-policia-348276"
+                target="_blank">eltiempo.com/bogota/como-esta-la-seguridad-en-bogota-segun-los-ciudadanos-y-la-policia-348276</a>
+            </p>
+          </div>
+        </h3>
+
+        <p class="cita">
+          Puede ordenar los elementos arrastrandolos de arriba a abajo hasta
+          obtener el orden deseado
+        </p>
+        <!--Sírvase de ordenar los elementos-->
+        <ol class="sortable">
+          <li class="order-element" data-value="a">
+            Más programas socio-culturales
+          </li>
+          <li class="order-element" data-value="b">
+            Más presencia policial en las calles
+          </li>
+          <li class="order-element" data-value="c">Más encarcelamientos</li>
+          <li class="order-element" data-value="d">
+            Más oportunidades laborales dignas
+          </li>
+          <li class="order-element" data-value="e">
+            Más programas de educación y orientación para los jóvenes
+          </li>
+        </ol>
+      </form>
+
+      <form id="pregunta12" class="pregunta" data-categoria="drogas" data-tipo="2NN">
+        <h3>
+          ¿Con cuál de estas afirmaciones está usted de acuerdo sobre la dosis
+          mínima de <span class="info-link">drogas</span>?
+          <div class="descripcion">
+            <p>
+              "Desde el 1 de octubre [de 2018] entró en vigencia un decreto
+              firmado por el presidente Iván Duque que da luz verde a la Policía
+              para que incaute y destruya cualquier cantidad de droga que porte
+              y consuma una persona en el espacio público". Para mayor
+              información sobre este decreto, remítase a:
+              <a href="https://www.france24.com/es/20181002-colombia-dosis-minima-duque-narcotrafico"
+                target="_blank">france24.com/es/20181002-colombia-dosis-minima-duque-narcotrafico</a>
+            </p>
+          </div>
+        </h3>
+
+        <input id="p12o1" name="p12" type="checkbox" value="a" />
+        <label for="p12o1">El decreto que impulsó el presidente Iván Duque el año pasado atenta
+          contra los derechos fundamentales de los usuarios de sustancias
+          psicoactivas.</label>
+        <input id="p12o2" name="p12" type="checkbox" value="b" />
+        <label for="p12o2">Se deben priorizar operativos policiales para la incautación de la
+          dosis mínima.</label>
+        <input id="p12o3" name="p12" type="checkbox" value="c" />
+        <label for="p12o3">
+          Es necesaria una política más estricta que expulse las drogas de las
+          calles.
+        </label>
+        <input id="p12o4" name="p12" type="checkbox" value="nn" />
+        <label for="p12o4">
+          Ninguna.
+        </label>
+      </form>
+
+      <form id="pregunta13" class="pregunta" data-categoria="drogas" data-tipo="1">
+        <h3>
+          ¿Está de acuerdo con retomar la inciativa de los Centros de Atención
+          Móvil a Drogodependeintes, <span class="info-link">CAMAD</span>?
+          <div class="descripcion">
+            <p>
+              Los Centros de Atención Móvil a Drogodependientes (CAMAD) se
+              crearon, durante el período de alcaldía de Gustavo Petro, como
+              "primer eslabón en la cadena terapéutica de acciones de prevención
+              y mitigación del riesgo en la salud de la población habitante de
+              calle [con relación a la adicción a sustancias psicoactivas],
+              ofreciéndoles atención médica integral y hogares de paso.
+            </p>
+            <p>
+              Para mayor información acerca de los CAMAD, remítase a:
+              <a href="https://bogota.gov.co/mi-ciudad/salud/el-camad-ha-atendido-mas-de-11-mil-personas-consumidoras-de-sustanci"
+                target="_blank">bogota.gov.co/mi-ciudad/salud/el-camad-ha-atendido-mas-de-11-mil-personas-consumidoras-de-sustanci</a>
+            </p>
+          </div>
+        </h3>
+
+        <input id="p13o1" name="p13" type="checkbox" value="si" />
+        <label for="p13o1">Sí</label>
+        <input id="p13o2" name="p13" type="checkbox" value="no" />
+        <label for="p13o2">No</label>
+        <input id="p13o3" name="p13" type="checkbox" value="siif" />
+        <label for="p13o3">Depende</label>
+      </form>
+
+      <!-- ....:::: FIN 3. CATEGORIA DROGAS ::::.... -->
+    </section>
+
+    <section id="policial">
+      <!-- ........ 4. CATEGORIA VIOLENCIA ........ -->
+      <div class="section-title">
+        <h2>
+          Sistema Callejero de Documentación y Registro de Violencias Policiales
+        </h2>
+
+        <div class="descripcion-categoria">
+          <p>
+            El Sistema Callejero de Documentación y Registro de Violencias
+            Policiales pretende construir mecanismos accesibles de justicia para
+            las ciudadanías que son sistemáticamente violentadas por miembros de
+            la fuerza pública. Así pues, Temblores ONG, se ha preocupado por
+            construir un sistema de seguimiento, documentación y registro de la
+            violencia ejercida en contra de las poblaciones clave (habitantes de
+            calle, trabajadores sexuales, población LGBT+, líderes sociales,
+            personas en dejación de armas, usuarios de drogas y personas
+            privadas de la libertad) por parte de la fuerza pública en razón de
+            la exclusión del derecho a la ciudad. Mediante procesos de formación
+            popular, el Sistema pretende proyectarse como una plataforma
+            nacional de denuncia del abuso policial al que las víctimas puedan
+            acudir sin ser revictimizadas.
+          </p>
+          <p class="cita">
+            Para mayor información acerca del abuso policial, remítase al
+            informe de Temblores ONG "Los Nunca Nadie":
+            <a href="https://issuu.com/temblores/docs/los_nunca_nadie__informe_sobre_la_s"
+              target="_blank">issuu.com/temblores/docs/los_nunca_nadie__informe_sobre_la_s</a>
+          </p>
+        </div>
+      </div>
+
+      <form id="pregunta14" class="pregunta" data-categoria="violencia" data-tipo="3">
+        <h3>
+          Para usted, el éxito de la Policía en
+          <span class="info-link">Bogotá</span> se debería medir según:
+          <div class="descripcion">
+            <p>
+              Para mayor información acerca de la percepción de la ciudadanía
+              sobre la Policía Nacional, remítase a:
+              <a href="https://www.las2orillas.co/policias-abusivos-y-corruptos/"
+                target="_blank">las2orillas.co/policias-abusivos-y-corruptos</a>
+            </p>
+          </div>
+        </h3>
+
+        <input id="p14o1" name="p14" type="checkbox" value="a" />
+        <label for="p14o1">Número de capturas</label>
+        <input id="p14o2" name="p14" type="checkbox" value="b" />
+        <label for="p14o2">Aumento de agentes de la Policía formados en Derechos Humanos y trato
+          digno a la población</label>
+        <input id="p14o3" name="p14" type="checkbox" value="c" />
+        <label for="p14o3">Mejoramiento de la percepción de la ciudadanía frente a la
+          institución</label>
+        <input id="p14o4" name="p14" type="checkbox" value="d" />
+        <label for="p14o4">Reducción de hechos de violencia policial</label>
+        <input id="p14o5" name="p14" type="checkbox" value="e" />
+        <label for="p14o5">Cantidad de droga incautada</label>
+        <input id="p14o6" name="p14" type="checkbox" value="f" />
+        <label for="p14o6">Cantidad de armas incautadas</label>
+        <input id="p14o7" name="p14" type="checkbox" value="g" />
+        <label for="p14o7">Número de comparendos impuestos</label>
+        <input id="p14o8" name="p14" type="checkbox" value="h" />
+        <label for="p14o8">
+          Número de ciudadanos llevados a los Centros de Traslado por Protección
+          (CTP) donde se retienen en celdas hasta por 12 horas si la Policía
+          considera que están en peligro
+        </label>
+      </form>
+
+      <form id="pregunta15" class="pregunta" data-categoria="violencia" data-tipo="1">
+        <h3>
+          En su opinión, el trato que le da la Policía Nacional a la población
+          <span class="info-link">LGBT+</span> se podría resumir en:
+
+          <div class="descripcion">
+            <p>
+              Para mayor información acerca del trato de la Policía hacia la
+              comunidad LGBT+, remítase a:
+              <a href="https://www.elespectador.com/noticias/judicial/asi-es-la-violencia-policial-contra-la-poblacion-lgbti-segun-la-defensoria-articulo-807723"
+                target="_blank">elespectador.com/noticias/judicial/asi-es-la-violencia-policial-contra-la-poblacion-lgbti-segun-la-defensoria-articulo-807723</a>
+            </p>
+          </div>
+        </h3>
+
+        <input id="p15o1" name="p15" type="checkbox" value="a" />
+        <label for="p15o1">Un trato discriminatorio pero no violento</label>
+        <input id="p15o2" name="p15" type="checkbox" value="b" />
+        <label for="p15o2">Un trato discriminatorio y violento</label>
+        <input id="p15o3" name="p15" type="checkbox" value="c" />
+        <label for="p15o3">Un trato respetuoso en la medida de lo posible</label>
+        <input id="p15o4" name="p15" type="checkbox" value="d" />
+        <label for="p15o4">Todas las anteriores</label>
+        <input id="p15o5" name="p15" type="checkbox" value="e" />
+        <label for="p15o5">Ninguna</label>
+      </form>
+
+      <form id="pregunta16" class="pregunta" data-categoria="violencia" data-tipo="2">
+        <h3>
+          ¿Con cuál de estas afirmaciones está usted de acuerdo, frente al
+          Escuadrón Móvil Antidisturbios <span class="info-link">(ESMAD)</span>?
+
+          <div class="descripcion">
+            <p>
+              Para mayor información acerca del Escuadrón Móvil Antidisturbios
+              (ESMAD), según la Policía Nacional, remítase a:
+              <a href="https://www.policia.gov.co/especializados/antidisturbios"
+                target="_blank">policia.gov.co/especializados/antidisturbios</a>
+            </p>
+          </div>
+        </h3>
+
+        <input id="p16o1" name="p16" type="checkbox" value="a" />
+        <label for="p16o1">Debe regularse su uso de la fuerza</label>
+        <input id="p16o2" name="p16" type="checkbox" value="b" />
+        <label for="p16o2">Debe ampliarse el número de efectivos</label>
+        <input id="p16o3" name="p16" type="checkbox" value="c" />
+        <label for="p16o3">Debe restringirse el uso de cierto armamento</label>
+        <input id="p16o4" name="p16" type="checkbox" value="d" />
+        <label for="p16o4">Debe permanecer tal cual está</label>
+      </form>
+
+      <form id="pregunta17" class="pregunta" data-categoria="violencia" data-tipo="2NN">
+        <h3>
+          En Bogotá, la Policía le impuso un comparendo a una pareja del mismo
+          sexo por besarse en el Centro Comercial
+          <span class="info-link">Andino</span>. Para usted, esa sanción fue:
+
+          <div class="descripcion">
+            <p>
+              Para mayor información acerca del caso, remítase a:
+              <a href="https://www.elcolombiano.com/redes-sociales/denuncian-discriminacion-contra-gays-en-centro-comercial-andino-BA10547420"
+                target="_blank">elcolombiano.com/redes-sociales/denuncian-discriminacion-contra-gays-en-centro-comercial-andino-BA10547420</a>
+            </p>
+          </div>
+          <!--
+            -->
+          <!--Sírvase de escoger máximo dos respuestas-->
+        </h3>
+
+        <input id="p17o1" name="p17" type="checkbox" value="a" />
+        <label for="p17o1">Ejemplar, los actos obscenos no deben ser permitidos en el espacio
+          público</label>
+        <input id="p17o2" name="p17" type="checkbox" value="b" />
+        <label for="p17o2">Una muestra más de la homofobia institucionalizada en la
+          Policía</label>
+        <input id="p17o3" name="p17" type="checkbox" value="c" />
+        <label for="p17o3">Exagerada, pues con un simple llamado de atención hubiera sido
+          suficiente</label>
+        <input id="p17o4" name="p17" type="checkbox" value="d" />
+        <label for="p17o4">Injusta, homofóbica y revictimizante hacia la pareja que simplemente
+          estaba demostrando su afecto</label>
+        <input id="p17o5" name="p17" type="checkbox" value="e" />
+        <label for="p17o5">Un hecho de discriminación aislado que no representa la forma general
+          en la que suele actuar la Policía</label>
+        <input id="p17o6" name="p17" type="checkbox" value="f" />
+        <label for="p17o6">
+          Minúscula, debieron sacar a la pareja del Centro Comercial para
+          proteger la integridad de los niños
+        </label>
+
+        <input id="p17ot" name="p17" type="checkbox" value="nn" />
+        <label for="p17ot">
+          Ninguna de las anteriores
+        </label>
+      </form>
+
+      <form id="pregunta18" class="pregunta" data-categoria="violencia" data-tipo="2NN">
+        <h3>
+          La Corte Constitucional tumbó la prohibición para consumir bebidas
+          alcohólicas y sustancias psicoactivas en el espacio público. Frente a
+          esa decisión, usted cree <span class="info-link">que:</span>
+
+          <div class="descripcion">
+            <p>
+              Para mayor información acerca de esta norma y las razones de la
+              Corte para tumbarla, remítase a:
+              <a href="https://www.eltiempo.com/justicia/cortes/corte-tumba-norma-que-prohibia-consumir-licor-y-drogas-en-espacio-publico-372050"
+                target="_blank">eltiempo.com/justicia/cortes/corte-tumba-norma-que-prohibia-consumir-licor-y-drogas-en-espacio-publico-372050</a>
+            </p>
+          </div>
+        </h3>
+
+        <input id="p18o1" name="p18" type="checkbox" value="a" />
+        <label for="p18o1">Los agentes de la Policía deben seguir incautando la dosis mínima de
+          los usuarios e impartiendo comparendos</label>
+        <input id="p18o2" name="p18" type="checkbox" value="b" />
+        <label for="p18o2">La policía debe expulsar del espacio público a aquellos que sean
+          sorprendidos fumándose un porro en la calle</label>
+        <input id="p18o3" name="p18" type="checkbox" value="c" />
+        <label for="p18o3">Es necesaria una reglamentación de los espacios, así como las horas,
+          en los que se puede consumir, de la mano de la implementación de
+          políticas de atención en salud a las personas usuarias de
+          drogas</label>
+        <input id="p18o4" name="p18" type="checkbox" value="d" />
+        <label for="p18o4">Es necesaria la creación de salas de consumo controlado con enfoque
+          de reducción de daños</label>
+        <input id="p18o5" name="p18" type="checkbox" value="e" />
+        <label for="p18o5">
+          Es necesario construir nuevas leyes que restrinjan el consumo de
+          sustancias en espacio público
+        </label>
+
+        <input id="p18o6" name="p18" type="checkbox" value="nn" />
+        <label for="p18o6">
+          Ninguna
+        </label>
+      </form>
+      <!-- ....:::: FIN 4. CATEGORIA VIOLENCIA ::::.... -->
+    </section>
+
+    <section id="actualidad">
+      <!-- ........ 5. CATEGORIA ACTUALIDAD ........ -->
+
+      <h2>Actualidad</h2>
+      <form id="pregunta19" class="pregunta" data-categoria="actualidad" data-tipo="1">
+        <h3>
+          Para usted qué es más <span class="info-link">importante:</span>
+
+          <div class="descripcion">
+            <p>
+              Tenga en cuenta que, usualmente, cuando hay movilizaciones
+              sociales las vías principales de Bogotá (como la avenida Caracas,
+              la calle 26, la carrera 30, la avenida Circunvalar, entre otras)
+              son bloqueadas y por tanto, se presentan retrasos en la movilidad
+              de la ciudad.
+            </p>
+          </div>
+          <!---->
+        </h3>
+        <input id="p19o1" name="p19" type="checkbox" value="a" />
+        <label for="p19o1">El derecho a la protesta social</label>
+        <input id="p19o2" name="p19" type="checkbox" value="b" />
+        <label for="p19o2">La buena movilidad de la ciudad</label>
+        <input id="p19o3" name="p19" type="checkbox" value="c" />
+        <label for="p19o3">Ambas por igual</label>
+      </form>
+
+      <form id="pregunta20" class="pregunta" data-categoria="actualidad" data-tipo="8">
+        <h3>
+          En su opinión, ¿cuál de estos ejemplos representa lo que es un líder
+          <span class="info-link">social</span>?
+
+          <div class="descripcion">
+            <p>
+              Para mayor información acerca de la importancia de los líderes
+              sociales para Colombia, remítase a:
+              <a href="https://www.elcampesino.co/por-que-son-importantes-los-lideres-sociales-en-colombia/"
+                target="_blank">elcampesino.co/por-que-son-importantes-los-lideres-sociales-en-colombia</a>
+            </p>
+          </div>
+        </h3>
+        <input id="p20o1" type="checkbox" name="p20" value="a" />
+        <label for="p20o1">Una mujer desplazada que se niega a ser desalojada de un predio en el
+          que ha vivido más de 15 años</label>
+        <input id="p20o2" type="checkbox" name="p20" value="b" />
+        <label for="p20o2">Alguien que defiende derechos LGTB+</label>
+        <input id="p20o3" type="checkbox" name="p20" value="c" />
+        <label for="p20o3">Un excombatiente que se dedica a promoción de la Paz en Chinchiná,
+          Caldas</label>
+        <input id="p20o4" type="checkbox" name="p20" value="d" />
+        <label for="p20o4">Una mujer trans que se reúne con la comunidad todos los jueves en su
+          peluquería para escuchar historias de vida</label>
+        <input id="p20o5" type="checkbox" name="p20" value="e" />
+        <label for="p20o5">Una trabajadora sexual que se opone a que se lleven a sus compañeras
+          a la UPJ (Unidad Permanente de Justicia)</label>
+        <input id="p20o6" type="checkbox" name="p20" value="f" />
+        <label for="p20o6">Una persona que abraza un árbol para evitar que lo corten</label>
+        <input id="p20o7" type="checkbox" name="p20" value="g" />
+        <label for="p20o7">Un vendedor ambulante que organiza a sus colegas para reclamar su
+          derecho a trabajar en el espacio público</label>
+        <input id="p20o8" type="checkbox" name="p20" value="h" />
+        <label for="p20o8">Una persona que todos los lunes le lleva agua de panela a lo
+          habitantes de calle que viven en la carrilera</label>
+      </form>
+
+      <!-- ....:::: FIN 5. CATEGORIA ACTUALIDAD ::::.... -->
+    </section>
+
+    <section id="sobre">
+      <!-- ........ 6. CATEGORIA PERSONAL ........ -->
+      <h2>Sobre usted</h2>
+
+      <form id="pregunta21" class="pregunta" data-categoria="personal" data-tipo="1">
+        <h3>
+          ¿Alguna vez ha consumido alguna <span class="info-link">droga</span>?
+          <div class="descripcion">
+            <p>
+              Recuerde que puede responder con sinceridad, estas respuestas no
+              quedan registradas y se borran al final ;)
+            </p>
+          </div>
+        </h3>
+        <input id="p21o1" name="p21" type="checkbox" value="si" />
+        <label for="p21o1">Sí</label>
+        <input id="p21o2" name="p21" type="checkbox" value="no" />
+        <label for="p21o2">No</label>
+      </form>
+
+      <form id="pregunta22" class="pregunta" data-categoria="personal" data-tipo="1">
+        <h3>
+          ¿Ha utilizado alguna vez aplicaciones de transporte como Uber, Beat,
+          DiDi, Picap, Cabify o <span class="info-link">similares?</span>
+
+          <div class="descripcion">
+            <p>
+              Para mayor información acerca de la polémica de las aplicaciones
+              de trasnporte, remítase a:
+              <a href="https://periodicoeljurista.com.co/pais/taxis-vs-apps-desbalance-en-el-transporte-de-bogota/"
+                target="_blank">periodicoeljurista.com.co/pais/taxis-vs-apps-desbalance-en-el-transporte-de-bogota</a>
+            </p>
+          </div>
+        </h3>
+        <input id="p22o1" name="p22" type="checkbox" value="si" />
+        <label for="p22o1">Sí</label>
+        <input id="p22o2" name="p22" type="checkbox" value="no" />
+        <label for="p22o2">No</label>
+      </form>
+
+      <form id="pregunta23" class="pregunta" data-categoria="personal" data-tipo="1">
+        <h3>
+          Si le tocara elegir, ¿Cuál de estos tres grupos de colombianos más
+          <span class="info-link">admira?</span>
+
+          <div class="descripcion">
+            <p>
+              Para acceder a información de los siguientes colombianos, remítase
+              a:
+            </p>
+
+            <ul>
+              <li>
+                <a href="https://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=11&cad=rja&uact=8&ved=2ahUKEwjez9qswPrkAhWI1FkKHbFdDw0QFjAKegQIABAB&url=https%3A%2F%2Fes.wikipedia.org%2Fwiki%2FGustavo_Petro&usg=AOvVaw2UcvyMKCox5Aje6J45mm3t"
+                  target="_blank">Gustavo Petro</a>
+              </li>
+              <li>
+                <a href="https://www.las2orillas.co/comunidad-de-cocorna-se-opone-la-quinta-microcentral-que-se-quiere-construir-en-la-zona/"
+                  target="_blank">Flor Gallego</a>
+              </li>
+              <li>
+                <a href="https://fundaciongabo.org/es/consultorio-etico/javier-dario-restrepo" target="_blank">Javier
+                  Darío Restrepo</a>
+              </li>
+              <li>
+                <a href="https://es.wikipedia.org/wiki/Nairo_Quintana" target="_blank">Nairo Quintana</a>
+              </li>
+              <li>
+                <a href="https://es.wikipedia.org/wiki/Rodolfo_Llin%C3%A1s" target="_blank">Rodolfo Llinás</a>
+              </li>
+              <li>
+                <a href="https://es.wikipedia.org/wiki/Gloria_Pach%C3%B3n" target="_blank">Gloria Pachón</a>
+              </li>
+              <li>
+                <a href="https://es.wikipedia.org/wiki/Virgilio_Barco" target="_blank">Virgilio Barco</a>
+              </li>
+              <li>
+                <a href="https://es.wikipedia.org/wiki/Esmeralda_Arboleda" target="_blank">Esmeralda Arboleda</a>
+              </li>
+              <li>
+                <a href="https://es.wikipedia.org/wiki/Antanas_Mockus" target="_blank">Antanas Mockus</a>
+              </li>
+            </ul>
+
+            <p class="cita">
+              Posdata: Piérdale el miedo a Wikipedia. Remítase a una discusión
+              sobre su confiabilidad en:
+              <a href="https://culturacolectiva.com/tecnologia/wikipedia-es-una-fuente-confiable-o-no"
+                target="_blank">culturacolectiva.com/tecnologia/wikipedia-es-una-fuente-confiable-o-no</a>
+            </p>
+          </div>
+        </h3>
+
+        <input id="p23o1" name="p23" type="checkbox" value="a" />
+        <label for="p23o1">El ex candidato presidencial Gustavo Petro, la lideresa social Flor
+          Gallego y el periodista Javier Darío Restrepo</label>
+        <input id="p23o2" name="p23" type="checkbox" value="b" />
+        <label for="p23o2">El ciclista Nairo Quintana, el científico Rodolfo Llinás y la
+          periodista y viuda de Luis Carlos Galán, Gloria Pachón</label>
+        <input id="p23o3" name="p23" type="checkbox" value="c" />
+        <label for="p23o3">El ex presidente Virgilio Barco, la feminista y primera mujer
+          senadora en Colombia, Esmeralda Arboleda y el senador y ex alcalde de
+          Bogotá, Antanas Mockus</label>
+      </form>
+
+      <form id="pregunta 24" class="pregunta" data-categoria="personal" data-tipo="1">
+        <h3>
+          Telenovela colombiana <span class="info-link">favorita:</span>
+
+          <div class="descripcion">
+            <p>
+              Sobre estas novelas:
+            </p>
+
+            <ul>
+              <li>
+                <a href="https://www.youtube.com/watch?v=szFAcSUaOX8" target="_blank">Cuando quiero llorar no lloro (Los
+                  Victorinos, 1991)</a>
+              </li>
+              <li>
+                <a href="https://es.wikipedia.org/wiki/El_cuento_del_domingo" target="_blank">El Cuento de Domingo
+                  (1984-1988)</a>
+                (Casi no hay información, mucho menos trailer, pero aquí le van
+                dos relatos de dos episodios:
+                <a href="https://www.semana.com/cultura/articulo/vivir-el-cuento/7977-3" target="_blank">"vivir el
+                  cuento"</a>
+                y
+                <a href="https://www.semana.com/cultura/articulo/el-brillo-de-brillo/8321-3" target="_blank">"el brillo
+                  de brillo"</a>
+              </li>
+              <li>
+                <a href="https://www.youtube.com/watch?v=nGB5UcBquLk" target="_blank">Yo soy Betty, la fea</a>
+              </li>
+              <li>
+                <a href="https://www.youtube.com/watch?v=nGB5UcBquLk" target="_blank">Café, con Aroma de Mujer (Si no se
+                  la ha visto, véala en
+                  Netflix)</a>
+              </li>
+            </ul>
+          </div>
+        </h3>
+        <input id="p24o1" type="checkbox" name="p24" value="a" />
+        <label for="p24o1">Los victorianos y el cuento de Domingo</label>
+        <input id="p24o2" type="checkbox" name="p24" value="b" />
+        <label for="p24o2">Betty la fea</label>
+        <input id="p24o3" type="checkbox" name="p24" value="c" />
+        <label for="p24o3"> Café con aroma de mujer</label>
+      </form>
+      <!-- ....:::: FIN 6. PERSONAL ::::.... -->
+    </section>
+  </div>
+
+  <div id="res">
+    <canvas id="canvas"></canvas>
+    <div id="download-img">Descargar imagen</div>
+    <div id="compartir">
+      <span class="compartir-title">Compartir:</span>
+      <ul>
+        <li id="share-fb">facebook</li>
+      </ul>
+    </div>
+  </div>
+
+  <div id="info">
+    <div class="content">
+      <div id="close">X</div>
+      <p>Escoja a su Buen Partido para la alcadía de Bogotá con la <span class="hashtag">#BusetaElectoral</span></p>
+      <p>Si los debates y los discursos de los candidatos a la alcaldía de Bogotá no lo convencen sobre quién votar, le tenemos una solución. Buen Partido es un aplicativo para medir su afinidad con los candidatos en temas de género, consumo, violencia policial y derecho a la ciudad.</p>
+      <p>Parece que lo único que importa para estas elecciones es si el metro va por arriba o por abajo de la tierra. O quien es peñalosista y quien no. ¿Y el resto de los temas? Cerosetenta se montó en la #BusetaElectoral, una propuesta de Temblores ONG que busca impulsar la participación ciudadana y a la difusión de información electoral en torno a otros temas que, aunque igual de importantes, no siempre están en el centro del debate político e, incluso, de los planes de gobierno de los candidatos. Hablamos de los temas sobre justicia social: sexo y género, derecho a la ciudad, cárceles, consumo de drogas y violencia policial.</p>
+      <p>Para hacerlo, la <span class="hashtag">#BusetaElectoral</span> les envió en mayo a los cuatro candidatos a la Alcaldía de Bogotá un cuestionario con preguntas específicas en cada uno de los temas a través de un derecho de petición. Todos, menos Miguel Uribe Turbay, nos respondieron. Y es a partir de esas respuestas que hemos creado Buen Partido, un aplicativo para que ustedes como votantes puedan escoger candidato. Uribe, quien solo respondió <a href="https://es.scribd.com/document/429502382/Respuesta-Miguel-Uribe-Turbay-1" target="_blank">con un comunicado</a>, quedó fuera de este ejercicio que busca que los electores encuentren afinidades con los candidatos en temas de justicia social.</p>
+      <p>Esta herramienta la construyó un equipo de estudiantes del Centro de Estudios en Periodismo de la Universidad de los Andes que pertenecen tanto a la carrera en pregrado de Narrativas Digitales, como a la maestría en Periodismo y al semillero de periodismo en la revista Cerosetenta. Todos ellos trabajaron en un semillero de programación digital para crear Buen Partido bajo el liderazgo del profesor del Ceper, Juan Camilo González.</p>
+      <p>Es, además, el producto de una alianza de varias organizaciones que se unieron en una iniciativa imparcial que se fundamenta en la pedagogía electoral sin filiaciones partidistas. Somos Temblores ONG y Fescol, a las que se sumaron la revista Cerosetenta, Extituto, PeaceWorks Sweden y el Centro de Pensamiento y acción para la transición (CPAT).</p>
+
+      <h3>Participantes</h3>
+      <ul>
+        <li>Natalia Arenas</li>
+        <li>David Esteban Angulo</li>
+        <li>Camila Alejandra Bolivar</li>
+        <li>Sara Cely</li>
+        <li>Liliana Andrea Cobos</li>
+        <li>Catalina Giraldo</li>
+      </ul>
+
+      <div id="logos">
+        <a href="https://facartes.uniandes.edu.co/" target="_blank"><img src="./imgs/logo-facartes.png"
+            alt="Facartes" /></a>
+        <a href="https://ceper.uniandes.edu.co/" target="_blank"><img src="./imgs/logo-ceper.png" alt="ceper" /></a>
+        <a href="https://cerosetenta.uniandes.edu.co/" target="_blank"><img src="./imgs/logo-cerosetento.png"
+            alt="cerosetenta" /></a>
+        <a href="https://www.temblores.org/" target="_blank"><img src="./imgs/logo-temblores.png" alt="temblores" /></a>
+        <a href="http://www.extituto.org/" target="_blank"><img src="./imgs/logo-extituto.png" alt="exituto" /></a>
+        <a href="https://www.fes-colombia.org/" target="_blank"><img src="./imgs/logo-fescol.png" alt="fescol" /></a>
+        <a href="http://peaceworks.se/colombia/" target="_blank"><img src="./imgs/logo-peaceworks.png"
+            alt="peaceworks" /></a>
+        <a href="http://cpatong.com/" target="_blank"><img src="./imgs/logo-cpat.png" alt="CPAT" /></a>
+      </div>
+    </div>
+    <span class="lines"></span>
+  </div>
+
+  <script src="./js/fileSaver.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/sortablejs@latest/Sortable.min.js"></script>
+  <script src="./js/scripts.js"></script>
+</body>
+
+</html>
