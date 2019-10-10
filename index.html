@@ -36,12 +36,12 @@
       <div class="cabezas">
         <span class="grupo1">
           <img class="cabeza-claudia" src="./imgs/claudia_lopez_pixel.png" alt="Claudia López" />
-          <img class="cabeza-carlos" src="./imgs/carlos galan_pixel.png" alt="Carlos Galan" />
+          <img class="cabeza-carlos" src="./imgs/carlos_galan_pixel.png" alt="Carlos Galan" />
         </span>
 
         <span class="grupo2">
-          <img class="cabeza-hollman" src="./imgs/hollman morris_pixel.png" alt="Hollman Morris" />
-          <img class="cabeza-miguel" src="./imgs/miguel uribe_pixel.png" alt="Miguel Uribe" />
+          <img class="cabeza-hollman" src="./imgs/hollman_morris_pixel.png" alt="Hollman Morris" />
+          <img class="cabeza-miguel" src="./imgs/miguel_uribe_pixel.png" alt="Miguel Uribe" />
         </span>
       </div>
       <h1>buen partido</h1>
@@ -972,24 +972,43 @@
 
   <div id="res">
     <canvas id="canvas"></canvas>
-    <div id="download-img">Descargar imagen</div>
-    <div id="compartir">
-      <span class="compartir-title">Compartir:</span>
-      <ul>
-        <li id="share-fb">facebook</li>
-      </ul>
+
+    <div id="compartir" class="inline">
+      <span class="inline">Compartir:</span>
+      <span id="share-fb" class="inline inline-link"></span>
     </div>
+
+    <div id="download-img" class="inline inline-link"></div>
   </div>
 
   <div id="info">
     <div class="content">
       <div id="close">X</div>
       <p>Escoja a su Buen Partido para la alcadía de Bogotá con la <span class="hashtag">#BusetaElectoral</span></p>
-      <p>Si los debates y los discursos de los candidatos a la alcaldía de Bogotá no lo convencen sobre quién votar, le tenemos una solución. Buen Partido es un aplicativo para medir su afinidad con los candidatos en temas de género, consumo, violencia policial y derecho a la ciudad.</p>
-      <p>Parece que lo único que importa para estas elecciones es si el metro va por arriba o por abajo de la tierra. O quien es peñalosista y quien no. ¿Y el resto de los temas? Cerosetenta se montó en la #BusetaElectoral, una propuesta de Temblores ONG que busca impulsar la participación ciudadana y a la difusión de información electoral en torno a otros temas que, aunque igual de importantes, no siempre están en el centro del debate político e, incluso, de los planes de gobierno de los candidatos. Hablamos de los temas sobre justicia social: sexo y género, derecho a la ciudad, cárceles, consumo de drogas y violencia policial.</p>
-      <p>Para hacerlo, la <span class="hashtag">#BusetaElectoral</span> les envió en mayo a los cuatro candidatos a la Alcaldía de Bogotá un cuestionario con preguntas específicas en cada uno de los temas a través de un derecho de petición. Todos, menos Miguel Uribe Turbay, nos respondieron. Y es a partir de esas respuestas que hemos creado Buen Partido, un aplicativo para que ustedes como votantes puedan escoger candidato. Uribe, quien solo respondió <a href="https://es.scribd.com/document/429502382/Respuesta-Miguel-Uribe-Turbay-1" target="_blank">con un comunicado</a>, quedó fuera de este ejercicio que busca que los electores encuentren afinidades con los candidatos en temas de justicia social.</p>
-      <p>Esta herramienta la construyó un equipo de estudiantes del Centro de Estudios en Periodismo de la Universidad de los Andes que pertenecen tanto a la carrera en pregrado de Narrativas Digitales, como a la maestría en Periodismo y al semillero de periodismo en la revista Cerosetenta. Todos ellos trabajaron en un semillero de programación digital para crear Buen Partido bajo el liderazgo del profesor del Ceper, Juan Camilo González.</p>
-      <p>Es, además, el producto de una alianza de varias organizaciones que se unieron en una iniciativa imparcial que se fundamenta en la pedagogía electoral sin filiaciones partidistas. Somos Temblores ONG y Fescol, a las que se sumaron la revista Cerosetenta, Extituto, PeaceWorks Sweden y el Centro de Pensamiento y acción para la transición (CPAT).</p>
+      <p>Si los debates y los discursos de los candidatos a la alcaldía de Bogotá no lo convencen sobre quién votar, le
+        tenemos una solución. Buen Partido es un aplicativo para medir su afinidad con los candidatos en temas de
+        género, consumo, violencia policial y derecho a la ciudad.</p>
+      <p>Parece que lo único que importa para estas elecciones es si el metro va por arriba o por abajo de la tierra. O
+        quien es peñalosista y quien no. ¿Y el resto de los temas? Cerosetenta se montó en la #BusetaElectoral, una
+        propuesta de Temblores ONG que busca impulsar la participación ciudadana y a la difusión de información
+        electoral en torno a otros temas que, aunque igual de importantes, no siempre están en el centro del debate
+        político e, incluso, de los planes de gobierno de los candidatos. Hablamos de los temas sobre justicia social:
+        sexo y género, derecho a la ciudad, cárceles, consumo de drogas y violencia policial.</p>
+      <p>Para hacerlo, la <span class="hashtag">#BusetaElectoral</span> les envió en mayo a los cuatro candidatos a la
+        Alcaldía de Bogotá un cuestionario con preguntas específicas en cada uno de los temas a través de un derecho de
+        petición. Todos, menos Miguel Uribe Turbay, nos respondieron. Y es a partir de esas respuestas que hemos creado
+        Buen Partido, un aplicativo para que ustedes como votantes puedan escoger candidato. Uribe, quien solo respondió
+        <a href="https://es.scribd.com/document/429502382/Respuesta-Miguel-Uribe-Turbay-1" target="_blank">con un
+          comunicado</a>, quedó fuera de este ejercicio que busca que los electores encuentren afinidades con los
+        candidatos en temas de justicia social.</p>
+      <p>Esta herramienta la construyó un equipo de estudiantes del Centro de Estudios en Periodismo de la Universidad
+        de los Andes que pertenecen tanto a la carrera en pregrado de Narrativas Digitales, como a la maestría en
+        Periodismo y al semillero de periodismo en la revista Cerosetenta. Todos ellos trabajaron en un semillero de
+        programación digital para crear Buen Partido bajo el liderazgo del profesor del Ceper, Juan Camilo González.</p>
+      <p>Es, además, el producto de una alianza de varias organizaciones que se unieron en una iniciativa imparcial que
+        se fundamenta en la pedagogía electoral sin filiaciones partidistas. Somos Temblores ONG y Fescol, a las que se
+        sumaron la revista Cerosetenta, Extituto, PeaceWorks Sweden y el Centro de Pensamiento y acción para la
+        transición (CPAT).</p>
 
       <h3>Participantes</h3>
       <ul>

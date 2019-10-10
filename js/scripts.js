@@ -1,18 +1,18 @@
 var counters = {};
 var usuario = [];
-var canvas;
-var ctx;
+var canvas = document.getElementById('canvas');
+var ctx = canvas.getContext('2d');
 var og = {};
 var ganador = [
   {
     nombre: 'HOLLMAN',
     completo: 'HOLLMAN MORRIS',
-    src: '../imgs/hollman morris_pixel.png'
+    src: '../imgs/hollman_morris_pixel.png'
   },
   {
     nombre: 'CARLOS',
     completo: 'CARLOS GALÁN',
-    src: '../imgs/carlos galan_pixel.png'
+    src: '../imgs/carlos_galan_pixel.png'
   },
   {
     nombre: 'CLAUDIA',
@@ -208,9 +208,7 @@ function indexOfMax(arr) {
 
 function pintarResultado(userName, userImgSrc) {
   var img = new Image();
-  img.onload = function(event) {
-    canvas = document.getElementById('canvas');
-    ctx = canvas.getContext('2d');
+  img.onload = function (event) {
     var w = 1200;
     var h = 630;
     var centerX = w / 2;
@@ -260,7 +258,8 @@ function pintarResultado(userName, userImgSrc) {
 
     if (userImgSrc) {
       var userImg = new Image();
-      userImg.onload = function() {
+      userImg.crossOrigin = 'anonymous';
+      userImg.onload = function () {
         ctx.save();
 
         ctx.beginPath();
@@ -334,8 +333,8 @@ function obtenerResultados() {
 
   var download = document.getElementById('download-img');
 
-  download.addEventListener('click', function() {
-    canvas.toBlob(function(blob) {
+  download.addEventListener('click', function () {
+    canvas.toBlob(function (blob) {
       saveAs(blob, 'miBuenPartidoes-' + ganador[ganadorI].completo + '.jpg');
     });
   });
@@ -367,7 +366,7 @@ for (var i = 0; i < preguntas.length; i++) {
     var sortable = Sortable.create(form.querySelector('.sortable'), {
       animation: 300,
       easing: 'cubic-bezier(1, 0, 0, 1)',
-      onEnd: function(event) {
+      onEnd: function (event) {
         var parentId = event.from.parentElement.id;
         var pos = parentId.split('pregunta')[1] - 1;
         var children = event.srcElement.children;
@@ -406,7 +405,7 @@ for (var i = 0; i < preguntas.length; i++) {
     });
   }
 
-  form.addEventListener('change', function(event) {
+  form.addEventListener('change', function (event) {
     var parentForm = event.target.parentElement;
     var t = parentForm.dataset.tipo;
     var parentId = parentForm.id;
@@ -419,7 +418,7 @@ for (var i = 0; i < preguntas.length; i++) {
     var respuestasU = [];
     if (!Array.isArray(usuario[pos])) {
       respuestasU = usuario[pos].split(',');
-      respuestasU = respuestasU.filter(function(ele) {
+      respuestasU = respuestasU.filter(function (ele) {
         return !!ele;
       });
     }
@@ -427,7 +426,7 @@ for (var i = 0; i < preguntas.length; i++) {
     if (checked) {
       respuestasU.push(resU);
     } else {
-      respuestasU = respuestasU.filter(function(ele) {
+      respuestasU = respuestasU.filter(function (ele) {
         return ele !== resU;
       });
     }
@@ -513,14 +512,14 @@ function scrollTo(to, duration) {
   var change = to - start;
   var startDate = +new Date();
 
-  var easeInOutQuad = function(t, b, c, d) {
+  var easeInOutQuad = function (t, b, c, d) {
     t /= d / 2;
     if (t < 1) return (c / 2) * t * t + b;
     t--;
     return (-c / 2) * (t * (t - 2) - 1) + b;
   };
 
-  var animateScroll = function() {
+  var animateScroll = function () {
     var currentDate = +new Date();
     var currentTime = currentDate - startDate;
     element.scrollTop = parseInt(
@@ -541,7 +540,7 @@ var menuItems = document.querySelectorAll('.menu .categoria');
 for (var i = 0; i < menuItems.length; i++) {
   var mItem = menuItems[i];
 
-  mItem.addEventListener('click', function(event) {
+  mItem.addEventListener('click', function (event) {
     var id;
     if (event.target.classList.contains('categoria')) {
       id = event.target.dataset.to;
@@ -570,8 +569,8 @@ function debounce(hold) {
   });
 }
 
-window.addEventListener('scroll', function() {
-  debounce(250).then(function() {
+window.addEventListener('scroll', function () {
+  debounce(250).then(function () {
     var sections = document.querySelectorAll('section');
     var wTop = window.pageYOffset + 400;
 
@@ -596,7 +595,7 @@ window.addEventListener('scroll', function() {
 var titles = document.querySelectorAll('.section-title h2');
 
 for (var i = 0; i < titles.length; i++) {
-  titles[i].addEventListener('click', function(event) {
+  titles[i].addEventListener('click', function (event) {
     var parent = event.target.parentElement;
     var desc = parent.querySelector('.descripcion-categoria');
     parent.classList.toggle('active');
@@ -612,7 +611,7 @@ for (var i = 0; i < titles.length; i++) {
 var infoLinks = document.querySelectorAll('.info-link');
 
 for (var i = 0; i < infoLinks.length; i++) {
-  infoLinks[i].addEventListener('click', function(event) {
+  infoLinks[i].addEventListener('click', function (event) {
     var parent = event.target.parentElement;
     var desc = parent.querySelector('.descripcion');
 
@@ -628,14 +627,14 @@ for (var i = 0; i < infoLinks.length; i++) {
 
 var creditos = document.getElementById('creditos-link');
 
-creditos.addEventListener('click', function(event) {
+creditos.addEventListener('click', function (event) {
   var info = document.getElementById('info');
   info.classList.toggle('active');
 });
 
 var close = document.getElementById('close');
 
-close.addEventListener('click', function(event) {
+close.addEventListener('click', function (event) {
   var info = document.getElementById('info');
   info.classList.remove('active');
 });
@@ -686,20 +685,18 @@ function dataURItoBlob(dataURI) {
 //   );
 // });
 
-window.fbAsyncInit = function() {
+window.fbAsyncInit = function () {
   FB.init({
     appId: '481310545785663',
     cookie: true,
     xfbml: true,
-    version: 'v4.0'
+    version: 'v2.0'
   });
 
   FB.AppEvents.logPageView();
-
-  console.log(FB.api);
 };
 
-(function(d, s, id) {
+(function (d, s, id) {
   var js,
     fjs = d.getElementsByTagName(s)[0];
   if (d.getElementById(id)) {
@@ -711,24 +708,40 @@ window.fbAsyncInit = function() {
   fjs.parentNode.insertBefore(js, fjs);
 })(document, 'script', 'facebook-jssdk');
 
-fbShare.addEventListener('click', function() {
-  let dataURL = canvas.toDataURL('image/jpeg', 1.0);
-  let blob = dataURItoBlob(dataURL);
-  var img = URL.createObjectURL(blob);
-  console.log(img);
-
+fbShare.addEventListener('click', function () {
   FB.login(
-    function(response) {
+    function (response) {
       if (response.status === 'connected') {
         FB.api(
           '/me',
           'GET',
           { fields: 'first_name,picture.type(large)' },
-          function(res) {
+          function (res) {
             if (res && !res.error) {
-              console.log('Successful login for: ' + res.first_name);
-              console.log(res);
               pintarResultado(res.first_name, res.picture.data.url);
+              let dataURL = canvas.toDataURL('image/jpeg', 1.0);
+              let blob = dataURItoBlob(dataURL);
+              var img = URL.createObjectURL(blob);
+              let formData = new FormData();
+              formData.append('access_token', response.authResponse.accessToken);
+              formData.append('source', blob);
+              console.log(img)
+
+              FB.api('/me/photos', 'POST', {
+                url: formData
+              }, function (r) {
+                console.log(r);
+              })
+
+              // FB.ui({
+              //   method: 'feed',
+              //   name: 'Buen Partido',
+              //   caption: 'caption text',
+              //   description: 'description',
+              //   link: 'https://cerosetenta.uniandes.edu.co/',
+              //   picture: "https://localhost:3000/imgs/claudia_lopez_pixel.png"
+
+              // })
             }
           }
         );
@@ -740,32 +753,4 @@ fbShare.addEventListener('click', function() {
       scope: 'public_profile'
     }
   );
-
-  function afterLogin(response) {
-    console.log(response);
-  }
-
-  // FB.ui(
-  //   {
-  //     method: 'share_open_graph',
-  //     action_type: 'og.shares',
-  //     action_properties: JSON.stringify({
-  //       object: {
-  //         'og:url': 'https://cerosetenta.uniandes.edu.co/',
-  //         'og:title': 'Mi buen partido es ',
-  //         'og:description': 'Descripción',
-  //         'og:image': img
-  //       }
-  //     })
-  //   },
-  //   // callback
-  //   function(response) {
-  //     if (response && !response.error_message) {
-  //       // then get post content
-  //       alert('successfully posted. Status id : ' + response.post_id);
-  //     } else {
-  //       alert('Something went error.');
-  //     }
-  //   }
-  // );
 });

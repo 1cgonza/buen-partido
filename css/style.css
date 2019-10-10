@@ -159,28 +159,44 @@ h4 {
 }
 
 #res.active {
-  height: 100vh;
   display: inline-block;
+}
+
+.inline {
+  display: inline-block;
+}
+
+.inline-link {
+  cursor: pointer;
+  width: 30px;
+  height: 30px;
+  background-size: cover;
 }
 
 #compartir {
   font-size: 1.3em;
   margin: 1em 0;
+  display: inline-block;
 }
 
 #download-img {
-  font-size: 1.3em;
-  margin: 1em 0;
-  cursor: pointer;
+  background-image: url("../imgs/ico-download.svg");
+  margin-left: 16em;
 }
 
-#download-img:hover {
+#share-fb {
+  background-image: url("../imgs/ico-fb.svg");
+}
+
+.inline-link:hover {
   opacity: .8;
 }
 
 canvas {
   border: 3px solid;
   width: 80%;
+  display: block;
+  margin: 0 auto;
 }
 
 section {
