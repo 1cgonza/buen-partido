@@ -208,6 +208,7 @@ function indexOfMax(arr) {
 
 function pintarResultado(userName, userImgSrc) {
   var img = new Image();
+  img.crossOrigin = 'anonymous';
   img.onload = function (event) {
     var w = 1200;
     var h = 630;
