@@ -208,6 +208,100 @@ function obtenerResultados() {
     canvas.appendChild(event.target);
   }
   img.src = og.src;
+
+  /*  
+  ....:::: FACEBOOK ::::....
+*/
+
+  function dataURItoBlob(dataURI) {
+    var byteString = atob(dataURI.split(',')[1]);
+    var ab = new ArrayBuffer(byteString.length);
+    var ia = new Uint8Array(ab);
+    for (var i = 0; i < byteString.length; i++) {
+      ia[i] = byteString.charCodeAt(i);
+    }
+    return new Blob([ia], {
+      type: 'image/jpeg'
+    });
+  }
+
+  window.fbAsyncInit = function () {
+    FB.init({
+      appId: '481310545785663',
+      cookie: true,
+      xfbml: true,
+      version: 'v4.0'
+    });
+
+    FB.AppEvents.logPageView();
+  };
+
+  (function (d, s, id) {
+    var js,
+      fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) {
+      return;
+    }
+    js = d.createElement(s);
+    js.id = id;
+    js.src = 'https://connect.facebook.net/en_US/sdk.js';
+    fjs.parentNode.insertBefore(js, fjs);
+  })(document, 'script', 'facebook-jssdk');
+
+  var fbShare = document.getElementById('share-fb');
+
+  fbShare.addEventListener('click', function () {
+    FB.login(
+      function (response) {
+
+        if (response.status === 'connected') {
+          FB.ui({
+            method: 'share',
+            href: og.url,
+          }, function (res) {
+            console.log(res)
+          });
+        }
+      },
+      {
+        scope: 'public_profile'
+      }
+    );
+  });
+
+  /*
+    ....:::: TWITTER ::::....
+  */
+
+  window.twttr = (function (d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0],
+      t = window.twttr || {};
+    if (d.getElementById(id)) return t;
+    js = d.createElement(s);
+    js.id = id;
+    js.src = "https://platform.twitter.com/widgets.js";
+    fjs.parentNode.insertBefore(js, fjs);
+
+    t._e = [];
+    t.ready = function (f) {
+      t._e.push(f);
+    };
+
+    return t;
+  }(document, "script", "twitter-wjs"));
+
+  twttr.ready(
+    function (twttr) {
+      twttr.widgets.createShareButton(
+        og.url,
+        document.getElementById("share-twitter"),
+        {
+          text: "Mi BuenPartido es " + og.completo,
+          hashtags: "BusetaElectoral,BuenPartido",
+        }
+      );
+    }
+  );
 }
 
 // obtenemos todas las preguntas
@@ -511,61 +605,3 @@ close.addEventListener('click', function (event) {
   info.classList.remove('active');
 });
 
-/*  
-  ....:::: FACEBOOK ::::....
-*/
-var fbShare = document.getElementById('share-fb');
-
-function dataURItoBlob(dataURI) {
-  var byteString = atob(dataURI.split(',')[1]);
-  var ab = new ArrayBuffer(byteString.length);
-  var ia = new Uint8Array(ab);
-  for (var i = 0; i < byteString.length; i++) {
-    ia[i] = byteString.charCodeAt(i);
-  }
-  return new Blob([ia], {
-    type: 'image/jpeg'
-  });
-}
-
-window.fbAsyncInit = function () {
-  FB.init({
-    appId: '481310545785663',
-    cookie: true,
-    xfbml: true,
-    version: 'v4.0'
-  });
-
-  FB.AppEvents.logPageView();
-};
-
-(function (d, s, id) {
-  var js,
-    fjs = d.getElementsByTagName(s)[0];
-  if (d.getElementById(id)) {
-    return;
-  }
-  js = d.createElement(s);
-  js.id = id;
-  js.src = 'https://connect.facebook.net/en_US/sdk.js';
-  fjs.parentNode.insertBefore(js, fjs);
-})(document, 'script', 'facebook-jssdk');
-
-fbShare.addEventListener('click', function () {
-  FB.login(
-    function (response) {
-
-      if (response.status === 'connected') {
-        FB.ui({
-          method: 'share',
-          href: og.url,
-        }, function (res) {
-          console.log(res)
-        });
-      }
-    },
-    {
-      scope: 'public_profile'
-    }
-  );
-});

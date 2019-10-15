@@ -179,6 +179,7 @@ h4 {
 
 .inline {
   display: inline-block;
+  vertical-align: top;
 }
 
 .inline-link {
@@ -196,11 +197,18 @@ h4 {
 
 #download-img {
   background-image: url("../imgs/ico-download.svg");
-  margin-left: 16em;
+  margin: 1em 0 0 16em;
+}
+
+.share-title,
+#download-img {
+  display: none;
 }
 
 #share-fb {
   background-image: url("../imgs/ico-fb.svg");
+  width: 53px;
+  height: 20px;
 }
 
 .inline-link:hover {
@@ -680,6 +688,11 @@ footer .logos img:hover {
   footer .logos img {
     height: 60px;
     padding: .7em;
+  }
+
+  .share-title,
+  #download-img {
+    display: inline-block;
   }
 }
 
