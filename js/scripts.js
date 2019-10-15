@@ -5,17 +5,20 @@ var ganador = [
   {
     nombre: 'HOLLMAN',
     completo: 'HOLLMAN MORRIS',
-    src: '../imgs/hollman_morris_pixel.png'
+    src: 'https://1cgonza.github.io/buen-partido/imgs/miBuenPartidoesHOLLMAN-MORRIS.jpg',
+    url: 'https://1cgonza.github.io/buen-partido/0.html'
   },
   {
     nombre: 'CARLOS',
     completo: 'CARLOS GALÁN',
-    src: '../imgs/carlos_galan_pixel.png'
+    src: 'https://1cgonza.github.io/buen-partido/imgs/miBuenPartidoes-CARLOS-GALAN.jpg',
+    url: 'https://1cgonza.github.io/buen-partido/1.html'
   },
   {
     nombre: 'CLAUDIA',
     completo: 'CLAUDIA LÓPEZ',
-    src: '../imgs/claudia_lopez_pixel.png'
+    src: 'https://1cgonza.github.io/buen-partido/imgs/miBuenPartidoes-CLAUDIA-LOPEZ.jpg',
+    url: 'https://1cgonza.github.io/buen-partido/2.html'
   }
 ];
 var ganadorI;
@@ -182,6 +185,14 @@ function obtenerResultados() {
     }
   }
 
+  var contenedorPreguntas = document.getElementById('preguntas');
+  var contenedorRes = document.getElementById('res');
+
+  contenedorPreguntas.classList.remove('active');
+  contenedorRes.classList.add('active');
+
+  scrollTo(0, 500);
+
   var resultado = indexOfMax(suma.total);
 
   if (resultado.empate.length) {
@@ -190,8 +201,13 @@ function obtenerResultados() {
 
   ganadorI = resultado.ganador;
   og = ganador[ganadorI];
-  window.location.href = "./0.html";
-  console.log(ganadorI)
+
+  var img = new Image();
+  img.onload = function (event) {
+    var canvas = document.getElementById('canvas');
+    canvas.appendChild(event.target);
+  }
+  img.src = og.src;
 }
 
 // obtenemos todas las preguntas
@@ -483,14 +499,73 @@ for (var i = 0; i < infoLinks.length; i++) {
 
 var creditos = document.getElementById('creditos-link');
 
-creditos.addEventListener('click', function () {
+creditos.addEventListener('click', function (event) {
   var info = document.getElementById('info');
   info.classList.toggle('active');
 });
 
 var close = document.getElementById('close');
 
-close.addEventListener('click', function () {
+close.addEventListener('click', function (event) {
   var info = document.getElementById('info');
   info.classList.remove('active');
+});
+
+/*  
+  ....:::: FACEBOOK ::::....
+*/
+var fbShare = document.getElementById('share-fb');
+
+function dataURItoBlob(dataURI) {
+  var byteString = atob(dataURI.split(',')[1]);
+  var ab = new ArrayBuffer(byteString.length);
+  var ia = new Uint8Array(ab);
+  for (var i = 0; i < byteString.length; i++) {
+    ia[i] = byteString.charCodeAt(i);
+  }
+  return new Blob([ia], {
+    type: 'image/jpeg'
+  });
+}
+
+window.fbAsyncInit = function () {
+  FB.init({
+    appId: '481310545785663',
+    cookie: true,
+    xfbml: true,
+    version: 'v4.0'
+  });
+
+  FB.AppEvents.logPageView();
+};
+
+(function (d, s, id) {
+  var js,
+    fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) {
+    return;
+  }
+  js = d.createElement(s);
+  js.id = id;
+  js.src = 'https://connect.facebook.net/en_US/sdk.js';
+  fjs.parentNode.insertBefore(js, fjs);
+})(document, 'script', 'facebook-jssdk');
+
+fbShare.addEventListener('click', function () {
+  FB.login(
+    function (response) {
+
+      if (response.status === 'connected') {
+        FB.ui({
+          method: 'share',
+          href: og.url,
+        }, function (res) {
+          console.log(res)
+        });
+      }
+    },
+    {
+      scope: 'public_profile'
+    }
+  );
 });
