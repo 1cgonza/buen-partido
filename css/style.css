@@ -164,7 +164,6 @@ h4 {
 }
 
 #res {
-  display: none;
   margin: 2em 0;
   padding: 0;
   vertical-align: top;
@@ -206,11 +205,17 @@ h4 {
   opacity: .8;
 }
 
-canvas {
+#canvas {
   border: 3px solid;
   width: 80%;
   display: block;
   margin: 0 auto;
+  line-height: 0;
+}
+
+#canvas img {
+  width: 100%;
+  height: auto;
 }
 
 section {
@@ -687,7 +692,7 @@ footer .logos img:hover {
     margin: 0 auto;
   }
 
-  canvas {
+  #canvas {
     width: 60%;
   }
 

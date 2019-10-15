@@ -1,7 +1,5 @@
 var counters = {};
 var usuario = [];
-var canvas = document.getElementById('canvas');
-var ctx = canvas.getContext('2d');
 var og = {};
 var ganador = [
   {
@@ -148,79 +146,6 @@ function indexOfMax(arr) {
   };
 }
 
-function pintarResultado(userName, userImgSrc) {
-  var img = new Image();
-  img.crossOrigin = 'anonymous';
-  img.onload = function (event) {
-    var w = 1200;
-    var h = 630;
-    var centerX = w / 2;
-    var centerY = h / 2;
-    var im = event.target;
-    var iW = im.naturalWidth;
-    var iH = im.naturalHeight;
-    canvas.width = 1200;
-    canvas.height = 630;
-
-    var grd = ctx.createLinearGradient(0.0, 0.0, 0, canvas.height / 1.2);
-    grd.addColorStop(0.0, 'rgba(8, 126, 139, 1)');
-    grd.addColorStop(1.0, 'rgba(239, 233, 131, 1)');
-    ctx.fillStyle = grd;
-    ctx.fillRect(0, 0, canvas.width, canvas.height);
-
-    ctx.font = 'bold 50px Quantico';
-    ctx.fillStyle = 'white';
-    ctx.globalAlpha = 0.5;
-
-    if (userName) {
-      ctx.textAlign = 'right';
-      for (var y = 2; y < 10; y++) {
-        ctx.fillText(userName.toUpperCase(), 300, y * 60);
-        ctx.fillText(ganador[ganadorI].nombre, canvas.width - 200, y * 60);
-      }
-
-      ctx.textAlign = 'center';
-      for (var y = 2; y < 10; y++) {
-        ctx.fillText('+', centerX, y * 60);
-      }
-    } else {
-      ctx.textAlign = 'center';
-      for (var y = 2; y < 10; y++) {
-        ctx.fillText(ganador[ganadorI].nombre, centerX, y * 60);
-      }
-    }
-
-    ctx.globalAlpha = 1;
-    ctx.font = 'bold 40px Quantico';
-    ctx.textAlign = 'center';
-    ctx.fillText('MI BUEN PARTIDO ES', centerX, 50);
-
-    ctx.font = 'bold 50px Quantico';
-    ctx.fillStyle = 'black';
-    ctx.fillText(ganador[ganadorI].completo, centerX, canvas.height - 20);
-
-    if (userImgSrc) {
-      var userImg = new Image();
-      userImg.crossOrigin = 'anonymous';
-      userImg.onload = function () {
-        ctx.save();
-
-        ctx.beginPath();
-        ctx.arc(centerX - 300, centerY, 150, 0, Math.PI * 2, true);
-        ctx.clip();
-        ctx.drawImage(userImg, 150, centerY - iH / 2, 300, 300);
-        ctx.restore();
-
-        ctx.drawImage(im, centerX + iW / 2, centerY - iH / 2);
-      };
-      userImg.src = userImgSrc;
-    } else {
-      ctx.drawImage(im, centerX - iW / 2, centerY - iH / 2);
-    }
-  };
-  img.src = ganador[ganadorI].src;
-}
-
 function limitCheckboxes(form, input, limit) {
   var options = form.querySelectorAll('input');
 
@@ -257,12 +182,6 @@ function obtenerResultados() {
     }
   }
 
-  var contenedorPreguntas = document.getElementById('preguntas');
-  var contenedorRes = document.getElementById('res');
-
-  contenedorPreguntas.classList.remove('active');
-  contenedorRes.classList.add('active');
-
   var resultado = indexOfMax(suma.total);
 
   if (resultado.empate.length) {
@@ -271,16 +190,8 @@ function obtenerResultados() {
 
   ganadorI = resultado.ganador;
   og = ganador[ganadorI];
-
-  pintarResultado();
-
-  var download = document.getElementById('download-img');
-
-  download.addEventListener('click', function () {
-    canvas.toBlob(function (blob) {
-      saveAs(blob, 'miBuenPartidoes-' + ganador[ganadorI].completo + '.jpg');
-    });
-  });
+  window.location.href = "./0.html";
+  console.log(ganadorI)
 }
 
 // obtenemos todas las preguntas
@@ -572,74 +483,14 @@ for (var i = 0; i < infoLinks.length; i++) {
 
 var creditos = document.getElementById('creditos-link');
 
-creditos.addEventListener('click', function (event) {
+creditos.addEventListener('click', function () {
   var info = document.getElementById('info');
   info.classList.toggle('active');
 });
 
 var close = document.getElementById('close');
 
-close.addEventListener('click', function (event) {
+close.addEventListener('click', function () {
   var info = document.getElementById('info');
   info.classList.remove('active');
-});
-
-/*  
-  ....:::: FACEBOOK ::::....
-*/
-var fbShare = document.getElementById('share-fb');
-
-function dataURItoBlob(dataURI) {
-  var byteString = atob(dataURI.split(',')[1]);
-  var ab = new ArrayBuffer(byteString.length);
-  var ia = new Uint8Array(ab);
-  for (var i = 0; i < byteString.length; i++) {
-    ia[i] = byteString.charCodeAt(i);
-  }
-  return new Blob([ia], {
-    type: 'image/jpeg'
-  });
-}
-
-window.fbAsyncInit = function () {
-  FB.init({
-    appId: '481310545785663',
-    cookie: true,
-    xfbml: true,
-    version: 'v4.0'
-  });
-
-  FB.AppEvents.logPageView();
-};
-
-(function (d, s, id) {
-  var js,
-    fjs = d.getElementsByTagName(s)[0];
-  if (d.getElementById(id)) {
-    return;
-  }
-  js = d.createElement(s);
-  js.id = id;
-  js.src = 'https://connect.facebook.net/en_US/sdk.js';
-  fjs.parentNode.insertBefore(js, fjs);
-})(document, 'script', 'facebook-jssdk');
-
-fbShare.addEventListener('click', function () {
-  FB.login(
-    function (response) {
-      if (response.status === 'connected') {
-        FB.ui({
-          method: 'share',
-          href: 'https://developers.facebook.com/docs/',
-        }, function (res) {
-          console.log(res)
-        });
-      } else {
-        // The person is not logged into your webpage or we are unable to tell.
-      }
-    },
-    {
-      scope: 'public_profile'
-    }
-  );
 });
