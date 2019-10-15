@@ -32,29 +32,11 @@ var candidatos = [
     pregunta: 'Contrato personas trans',
     respuestas: ['si', 'si', 'si']
   },
-  // PREGUNTA 2
-  {
-    categoria: 'sexo',
-    pregunta: 'Acoso callejero',
-    respuestas: ['si', 'si', 'si']
-  },
-  // PREGUNTA 3
-  {
-    categoria: 'sexo',
-    pregunta: 'Educación sexual',
-    respuestas: ['si', 'si', 'si']
-  },
   // PREGUNTA 4
   {
     categoria: 'sexo',
     pregunta: 'Renuncia acoso sexual',
     respuestas: ['no', 'siif', 'si']
-  },
-  // PREGUNTA 5
-  {
-    categoria: 'sexo',
-    pregunta: 'Ideología de género',
-    respuestas: ['c', 'a', 'a']
   },
   // PREGUNTA 6
   {
@@ -63,12 +45,6 @@ var candidatos = [
     respuestas: ['si', 'siif', 'no']
   },
   // ....:::: CATEGORIA CIUDAD ::::....
-  // PREGUNTA 7
-  {
-    categoria: 'ciudad',
-    pregunta: 'Baños publicos',
-    respuestas: ['b', 'b', 'b,c']
-  },
   // PREGUNTA 8
   {
     categoria: 'ciudad',
@@ -88,16 +64,6 @@ var candidatos = [
     respuestas: ['si', 'no', 'no']
   },
   // ....:::: CATEGORIA DROGAS ::::....
-  // PREGUNTA 11
-  {
-    categoria: 'drogas',
-    pregunta: 'seguridad bogotá',
-    respuestas: [
-      ['c', 'b', 'a', 'd', 'e'],
-      ['a', 'd', 'b', 'c', 'e'],
-      ['d', 'b', 'a', 'e', 'c']
-    ]
-  },
   // PREGUNTA 12
   {
     categoria: 'drogas',
@@ -111,12 +77,6 @@ var candidatos = [
     respuestas: ['si', 'siif', 'no']
   },
   // ....:::: CATEGORIA VIOLENCIA ::::....
-  // PREGUNTA 14
-  {
-    categoria: 'violencia',
-    pregunta: 'éxito policía',
-    respuestas: ['b,c,d', 'b,c,d', 'b,c,d']
-  },
   // PREGUNTA 15
   {
     categoria: 'violencia',
@@ -128,12 +88,6 @@ var candidatos = [
     categoria: 'violencia',
     pregunta: 'ESMAD',
     respuestas: ['a,c', 'a,c', 'a']
-  },
-  // PREGUNTA 17
-  {
-    categoria: 'violencia',
-    pregunta: 'cc andino',
-    respuestas: ['b,d', 'nn', 'd,e']
   },
   // PREGUNTA 18
   {
@@ -161,22 +115,10 @@ var candidatos = [
     pregunta: 'consumo de droga',
     respuestas: ['si', 'si', 'no']
   },
-  // PREGUNTA 22
-  {
-    categoria: 'personal',
-    pregunta: 'uber',
-    respuestas: ['si', 'si', 'no']
-  },
   // PREGUNTA 23
   {
     categoria: 'personal',
     pregunta: 'tres colombianos',
-    respuestas: ['a', 'b', 'c']
-  },
-  // PREGUNTA 24
-  {
-    categoria: 'personal',
-    pregunta: 'telenovela',
     respuestas: ['a', 'b', 'c']
   }
 ];
@@ -346,6 +288,8 @@ var preguntas = document.querySelectorAll('.pregunta');
 
 // Pasamos por cada una en un loop
 for (var i = 0; i < preguntas.length; i++) {
+  preguntas[i].id = 'pregunta' + (i + 1);
+
   // Sacamos cada pregunta por separado
   var form = preguntas[i];
   // En el HTML definimos cuantas opciones puede seleccionar el usario con el atributo data-tipo="1", data-tipo="2"
@@ -657,35 +601,6 @@ function dataURItoBlob(dataURI) {
   });
 }
 
-// function upload(response) {
-
-// }
-// var upload = async response => {
-//   let canvas = document.getElementById('canvas');
-//   let dataURL = canvas.toDataURL('image/jpeg', 1.0);
-//   let blob = dataURItoBlob(dataURL);
-//   let formData = new FormData();
-//   formData.append('access_token', response.authResponse.accessToken);
-//   formData.append('source', blob);
-
-//   let responseFB = await fetch(`https://graph.facebook.com/me/photos`, {
-//     body: formData,
-//     method: 'post'
-//   });
-//   responseFB = await responseFB.json();
-//   console.log(responseFB);
-// };
-
-// fbShare.addEventListener('click', () => {
-//   FB.login(
-//     response => {
-//       //TODO check if user is logged in and authorized publish_actions
-//       upload(response);
-//     },
-//     { scope: 'publish_actions' }
-//   );
-// });
-
 window.fbAsyncInit = function () {
   FB.init({
     appId: '481310545785663',
@@ -713,39 +628,12 @@ fbShare.addEventListener('click', function () {
   FB.login(
     function (response) {
       if (response.status === 'connected') {
-        FB.api(
-          '/me',
-          'GET',
-          { fields: 'first_name,picture.type(large)' },
-          function (res) {
-            if (res && !res.error) {
-              pintarResultado(res.first_name, res.picture.data.url);
-              let dataURL = canvas.toDataURL('image/jpeg', 1.0);
-              let blob = dataURItoBlob(dataURL);
-              var img = URL.createObjectURL(blob);
-              let formData = new FormData();
-              formData.append('access_token', response.authResponse.accessToken);
-              formData.append('source', blob);
-              console.log(img)
-
-              FB.api('/me/photos', 'POST', {
-                url: formData
-              }, function (r) {
-                console.log(r);
-              })
-
-              // FB.ui({
-              //   method: 'feed',
-              //   name: 'Buen Partido',
-              //   caption: 'caption text',
-              //   description: 'description',
-              //   link: 'https://cerosetenta.uniandes.edu.co/',
-              //   picture: "https://localhost:3000/imgs/claudia_lopez_pixel.png"
-
-              // })
-            }
-          }
-        );
+        FB.ui({
+          method: 'share',
+          href: 'https://developers.facebook.com/docs/',
+        }, function (res) {
+          console.log(res)
+        });
       } else {
         // The person is not logged into your webpage or we are unable to tell.
       }
