@@ -163,6 +163,12 @@ h4 {
   display: block;
 }
 
+.posibles-r {
+  font-size: .85em;
+  font-style: italic;
+  display: block;
+}
+
 #res {
   display: none;
   margin: 2em 0;
