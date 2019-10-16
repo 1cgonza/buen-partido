@@ -458,7 +458,7 @@ for (var i = 0; i < preguntas.length; i++) {
     if (respondidas === preguntas.length) {
       obtenerResultados();
     }
-    obtenerResultados();
+    // obtenerResultados();
   });
 }
 
