@@ -5,19 +5,22 @@ var ganador = [
   {
     nombre: 'HOLLMAN',
     completo: 'HOLLMAN MORRIS',
-    src: 'https://1cgonza.github.io/buen-partido/imgs/miBuenPartidoesHOLLMAN-MORRIS.jpg',
+    src:
+      'https://1cgonza.github.io/buen-partido/imgs/miBuenPartidoesHOLLMAN-MORRIS.jpg',
     url: 'https://1cgonza.github.io/buen-partido/0.html'
   },
   {
     nombre: 'CARLOS',
     completo: 'CARLOS GALÁN',
-    src: 'https://1cgonza.github.io/buen-partido/imgs/miBuenPartidoes-CARLOS-GALAN.jpg',
+    src:
+      'https://1cgonza.github.io/buen-partido/imgs/miBuenPartidoes-CARLOS-GALAN.jpg',
     url: 'https://1cgonza.github.io/buen-partido/1.html'
   },
   {
     nombre: 'CLAUDIA',
     completo: 'CLAUDIA LÓPEZ',
-    src: 'https://1cgonza.github.io/buen-partido/imgs/miBuenPartidoes-CLAUDIA-LOPEZ.jpg',
+    src:
+      'https://1cgonza.github.io/buen-partido/imgs/miBuenPartidoes-CLAUDIA-LOPEZ.jpg',
     url: 'https://1cgonza.github.io/buen-partido/2.html'
   }
 ];
@@ -203,29 +206,16 @@ function obtenerResultados() {
   og = ganador[ganadorI];
 
   var img = new Image();
-  img.onload = function (event) {
+  img.onload = function(event) {
     var canvas = document.getElementById('canvas');
     canvas.appendChild(event.target);
-  }
+  };
   img.src = og.src;
 
   /*  
   ....:::: FACEBOOK ::::....
 */
-
-  function dataURItoBlob(dataURI) {
-    var byteString = atob(dataURI.split(',')[1]);
-    var ab = new ArrayBuffer(byteString.length);
-    var ia = new Uint8Array(ab);
-    for (var i = 0; i < byteString.length; i++) {
-      ia[i] = byteString.charCodeAt(i);
-    }
-    return new Blob([ia], {
-      type: 'image/jpeg'
-    });
-  }
-
-  window.fbAsyncInit = function () {
+  window.fbAsyncInit = function() {
     FB.init({
       appId: '481310545785663',
       cookie: true,
@@ -236,7 +226,7 @@ function obtenerResultados() {
     FB.AppEvents.logPageView();
   };
 
-  (function (d, s, id) {
+  (function(d, s, id) {
     var js,
       fjs = d.getElementsByTagName(s)[0];
     if (d.getElementById(id)) {
@@ -250,17 +240,19 @@ function obtenerResultados() {
 
   var fbShare = document.getElementById('share-fb');
 
-  fbShare.addEventListener('click', function () {
+  fbShare.addEventListener('click', function() {
     FB.login(
-      function (response) {
-
+      function(response) {
         if (response.status === 'connected') {
-          FB.ui({
-            method: 'share',
-            href: og.url,
-          }, function (res) {
-            console.log(res)
-          });
+          FB.ui(
+            {
+              method: 'share',
+              href: og.url
+            },
+            function(res) {
+              console.log(res);
+            }
+          );
         }
       },
       {
@@ -273,35 +265,34 @@ function obtenerResultados() {
     ....:::: TWITTER ::::....
   */
 
-  window.twttr = (function (d, s, id) {
-    var js, fjs = d.getElementsByTagName(s)[0],
+  window.twttr = (function(d, s, id) {
+    var js,
+      fjs = d.getElementsByTagName(s)[0],
       t = window.twttr || {};
     if (d.getElementById(id)) return t;
     js = d.createElement(s);
     js.id = id;
-    js.src = "https://platform.twitter.com/widgets.js";
+    js.src = 'https://platform.twitter.com/widgets.js';
     fjs.parentNode.insertBefore(js, fjs);
 
     t._e = [];
-    t.ready = function (f) {
+    t.ready = function(f) {
       t._e.push(f);
     };
 
     return t;
-  }(document, "script", "twitter-wjs"));
+  })(document, 'script', 'twitter-wjs');
 
-  twttr.ready(
-    function (twttr) {
-      twttr.widgets.createShareButton(
-        og.url,
-        document.getElementById("share-twitter"),
-        {
-          text: "Mi BuenPartido es " + og.completo,
-          hashtags: "BusetaElectoral,BuenPartido",
-        }
-      );
-    }
-  );
+  twttr.ready(function(twttr) {
+    twttr.widgets.createShareButton(
+      og.url,
+      document.getElementById('share-twitter'),
+      {
+        text: 'Mi BuenPartido es ' + og.completo,
+        hashtags: 'BusetaElectoral,BuenPartido'
+      }
+    );
+  });
 }
 
 // obtenemos todas las preguntas
@@ -332,7 +323,7 @@ for (var i = 0; i < preguntas.length; i++) {
     var sortable = Sortable.create(form.querySelector('.sortable'), {
       animation: 300,
       easing: 'cubic-bezier(1, 0, 0, 1)',
-      onEnd: function (event) {
+      onEnd: function(event) {
         var parentId = event.from.parentElement.id;
         var pos = parentId.split('pregunta')[1] - 1;
         var children = event.srcElement.children;
@@ -371,7 +362,7 @@ for (var i = 0; i < preguntas.length; i++) {
     });
   }
 
-  form.addEventListener('change', function (event) {
+  form.addEventListener('change', function(event) {
     var parentForm = event.target.parentElement;
     var t = parentForm.dataset.tipo;
     var parentId = parentForm.id;
@@ -384,7 +375,7 @@ for (var i = 0; i < preguntas.length; i++) {
     var respuestasU = [];
     if (!Array.isArray(usuario[pos])) {
       respuestasU = usuario[pos].split(',');
-      respuestasU = respuestasU.filter(function (ele) {
+      respuestasU = respuestasU.filter(function(ele) {
         return !!ele;
       });
     }
@@ -392,7 +383,7 @@ for (var i = 0; i < preguntas.length; i++) {
     if (checked) {
       respuestasU.push(resU);
     } else {
-      respuestasU = respuestasU.filter(function (ele) {
+      respuestasU = respuestasU.filter(function(ele) {
         return ele !== resU;
       });
     }
@@ -478,14 +469,14 @@ function scrollTo(to, duration) {
   var change = to - start;
   var startDate = +new Date();
 
-  var easeInOutQuad = function (t, b, c, d) {
+  var easeInOutQuad = function(t, b, c, d) {
     t /= d / 2;
     if (t < 1) return (c / 2) * t * t + b;
     t--;
     return (-c / 2) * (t * (t - 2) - 1) + b;
   };
 
-  var animateScroll = function () {
+  var animateScroll = function() {
     var currentDate = +new Date();
     var currentTime = currentDate - startDate;
     element.scrollTop = parseInt(
@@ -506,7 +497,7 @@ var menuItems = document.querySelectorAll('.menu .categoria');
 for (var i = 0; i < menuItems.length; i++) {
   var mItem = menuItems[i];
 
-  mItem.addEventListener('click', function (event) {
+  mItem.addEventListener('click', function(event) {
     var id;
     if (event.target.classList.contains('categoria')) {
       id = event.target.dataset.to;
@@ -535,8 +526,8 @@ function debounce(hold) {
   });
 }
 
-window.addEventListener('scroll', function () {
-  debounce(250).then(function () {
+window.addEventListener('scroll', function() {
+  debounce(250).then(function() {
     var sections = document.querySelectorAll('section');
     var wTop = window.pageYOffset + 400;
 
@@ -561,7 +552,7 @@ window.addEventListener('scroll', function () {
 var titles = document.querySelectorAll('.section-title h2');
 
 for (var i = 0; i < titles.length; i++) {
-  titles[i].addEventListener('click', function (event) {
+  titles[i].addEventListener('click', function(event) {
     var parent = event.target.parentElement;
     var desc = parent.querySelector('.descripcion-categoria');
     parent.classList.toggle('active');
@@ -577,7 +568,7 @@ for (var i = 0; i < titles.length; i++) {
 var infoLinks = document.querySelectorAll('.info-link');
 
 for (var i = 0; i < infoLinks.length; i++) {
-  infoLinks[i].addEventListener('click', function (event) {
+  infoLinks[i].addEventListener('click', function(event) {
     var parent = event.target.parentElement;
     var desc = parent.querySelector('.descripcion');
 
@@ -593,15 +584,14 @@ for (var i = 0; i < infoLinks.length; i++) {
 
 var creditos = document.getElementById('creditos-link');
 
-creditos.addEventListener('click', function (event) {
+creditos.addEventListener('click', function(event) {
   var info = document.getElementById('info');
   info.classList.toggle('active');
 });
 
 var close = document.getElementById('close');
 
-close.addEventListener('click', function (event) {
+close.addEventListener('click', function(event) {
   var info = document.getElementById('info');
   info.classList.remove('active');
 });
-
