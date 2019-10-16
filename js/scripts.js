@@ -6,22 +6,22 @@ var ganador = [
     nombre: 'HOLLMAN',
     completo: 'HOLLMAN MORRIS',
     src:
-      'https://1cgonza.github.io/buen-partido/imgs/miBuenPartidoesHOLLMAN-MORRIS.jpg',
-    url: 'https://1cgonza.github.io/buen-partido/0.html'
+      'https://cerosetenta.uniandes.edu.co/buenpartido/imgs/miBuenPartidoesHOLLMAN-MORRIS.jpg',
+    url: 'https://cerosetenta.uniandes.edu.co/buenpartido/0.html'
   },
   {
     nombre: 'CARLOS',
     completo: 'CARLOS GALÁN',
     src:
-      'https://1cgonza.github.io/buen-partido/imgs/miBuenPartidoes-CARLOS-GALAN.jpg',
-    url: 'https://1cgonza.github.io/buen-partido/1.html'
+      'https://cerosetenta.uniandes.edu.co/buenpartido/imgs/miBuenPartidoes-CARLOS-GALAN.jpg',
+    url: 'https://cerosetenta.uniandes.edu.co/buenpartido/1.html'
   },
   {
     nombre: 'CLAUDIA',
     completo: 'CLAUDIA LÓPEZ',
     src:
-      'https://1cgonza.github.io/buen-partido/imgs/miBuenPartidoes-CLAUDIA-LOPEZ.jpg',
-    url: 'https://1cgonza.github.io/buen-partido/2.html'
+      'https://cerosetenta.uniandes.edu.co/buenpartido/imgs/miBuenPartidoes-CLAUDIA-LOPEZ.jpg',
+    url: 'https://cerosetenta.uniandes.edu.co/buenpartido/2.html'
   }
 ];
 var ganadorI;
