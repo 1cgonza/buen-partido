@@ -46,7 +46,7 @@ a:focus {
 .titulo {
   width: 250px;
   padding-bottom: 120px;
-  margin: 3em auto 0 auto;
+  margin: 6em auto 0 auto;
   position: relative;
   line-height: 3em;
 }
@@ -586,7 +586,7 @@ header {
   font-family: 'Quantico', sans-serif;
   color: #2c2c2c;
   position: fixed;
-  top: 0;
+  top: 2em;
   width: 100%;
   display: block;
   margin: 0;
@@ -638,7 +638,7 @@ header {
   vertical-align: middle;
 }
 
-footer {
+#footer-bp {
   position: fixed;
   bottom: 0;
   width: 100%;
@@ -646,20 +646,20 @@ footer {
   z-index: 999;
 }
 
-footer .logos {
+#footer-bp .logos {
   text-align: center;
 }
 
-footer .logos a {
+#footer-bp .logos a {
   border: none;
 }
 
-footer .logos img {
+#footer-bp .logos img {
   height: 23px;
   padding: 0.2em;
 }
 
-footer .logos img:hover {
+#footer-bp .logos img:hover {
   opacity: .8;
 }
 
@@ -691,7 +691,7 @@ footer .logos img:hover {
     font-size: 1.2em;
   }
 
-  footer .logos img {
+  #footer-bp .logos img {
     height: 60px;
     padding: .7em;
   }

@@ -289,7 +289,8 @@ function obtenerResultados() {
       document.getElementById('share-twitter'),
       {
         text: 'Mi BuenPartido es ' + og.completo,
-        hashtags: 'BusetaElectoral,BuenPartido'
+        hashtags: 'BusetaElectoral,BuenPartido',
+        via: 'cerosetenta'
       }
     );
   });
